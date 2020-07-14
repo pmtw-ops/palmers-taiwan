@@ -34,4 +34,11 @@ module.exports = {
       },
     },
   },
+  variants: {
+    display: ['responsive', 'hover', 'focus', 'group-hover'],
+    maxWidth: ['responsive', 'hover', 'focus'],
+  },
+  plugins: [
+    require('@tailwindcss/ui'),
+  ]
 }
