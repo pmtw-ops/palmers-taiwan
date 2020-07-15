@@ -5,9 +5,9 @@ import { EXAMPLE_PATH } from '@/lib/constants'
 export default function Alert({ preview }) {
   return (
     <div
-      className={cn('border-b border-t bg-pmbrown text-white', {
+      className={cn('bg-pmbrown text-white', {
         'bg-accent-7 border-accent-7 text-white': preview,
-        'bg-accent-1 border-accent-2': !preview,
+        'border-t-2 border-orange-500': !preview,
       })}
     >
       <Container>
