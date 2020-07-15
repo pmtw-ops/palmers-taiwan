@@ -9,6 +9,26 @@ export default function NavMenuResponsive({ categories, collections }) {
   let [menuC, setMenuC] = useState(false);
   let [menuM, setMenuMobile] = useState(false);
 
+  const toggleAP = () => {
+    setMenuAP(menuAP = !menuAP);
+    if (menuC === true) setMenuC(false);
+  }
+  const toggleC = () => {
+    setMenuC(menuC = !menuC);
+    if (menuAP === true) setMenuAP(false);
+  }
+  const toggleMobile = () => {
+    setMenuMobile(menuM = !menuM);
+    if (menuM === false) {
+      setMenuAP(false);
+      setMenuC(false);
+    }
+  }
+  const toggleClose = () => {
+    setMenuAP(false);
+    setMenuC(false);
+    setMenuMobile(false);
+  }
   return (
     <Container>
       <div className="z-0 relative">
@@ -21,13 +41,13 @@ export default function NavMenuResponsive({ categories, collections }) {
             <button type="button" className="px-4 text-gray-500 font-medium focus:text-gray-900 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
               <Link href="/about"><span>關於我們</span></Link>
             </button>
-            <button type="button" onClick={() => setMenuAP(menuAP = !menuAP)} className="px-4 text-gray-500 group inline-flex items-center space-x-2 text-base leading-6 font-medium focus:text-gray-900 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
+            <button type="button" onClick={() => toggleAP()} className="px-4 text-gray-500 group inline-flex items-center space-x-2 text-base leading-6 font-medium focus:text-gray-900 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
               <span>全部產品</span>
               <svg className="text-gray-400 h-5 w-5 focus:text-gray-600 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </button>
-            <button type="button" onClick={() => setMenuC(menuC = !menuC)} className="px-4 text-gray-500 group inline-flex items-center space-x-2 text-base leading-6 font-medium focus:text-gray-900 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
+            <button type="button" onClick={() => toggleC()} className="px-4 text-gray-500 group inline-flex items-center space-x-2 text-base leading-6 font-medium focus:text-gray-900 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
               <span>產品系列</span>
               <svg className="text-gray-400 h-5 w-5 focus:text-gray-600 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -51,7 +71,7 @@ export default function NavMenuResponsive({ categories, collections }) {
         <div className="relative z-10 bg-white md:hidden">
           <div className="flex items-center justify-between md:hidden">
             <div>{' '}</div>
-            <button onClick={() => { setMenuMobile(menuM = !menuM); if (menuM === false) { setMenuAP(false); setMenuC(false); } }} className="p-3 opacity-50 hover:opacity-100 focus:opacity-100 focus:outline-none md:hidden">
+            <button onClick={() => toggleMobile()} className="p-3 opacity-50 hover:opacity-100 focus:opacity-100 focus:outline-none md:hidden">
               {!menuM ? <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M24 18v1h-24v-1h24zm0-6v1h-24v-1h24zm0-6v1h-24v-1h24z" fill="#1040e2" /><path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z" /></svg>
                 : <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z" /></svg>}
             </button>
@@ -67,13 +87,13 @@ export default function NavMenuResponsive({ categories, collections }) {
                 關於我們
               </div>
             </Link>
-            <div onClick={() => setMenuAP(menuAP = !menuAP)} className="flex p-1 m-1 text-gray-500 rounded focus:text-gray-800 hover:text-gray-800 hover:bg-gray-100">
+            <div onClick={() => toggleAP()} className="flex p-1 m-1 text-gray-500 rounded focus:text-gray-800 hover:text-gray-800 hover:bg-gray-100">
               <span>全部產品</span>
               <svg className="text-gray-400 h-5 w-5 focus:text-gray-600 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </div>
-            <div onClick={() => setMenuC(menuC = !menuC)} className="flex p-1 m-1 text-gray-500 rounded focus:text-gray-800 hover:text-gray-800 hover:bg-gray-100">
+            <div onClick={() => toggleC()} className="flex p-1 m-1 text-gray-500 rounded focus:text-gray-800 hover:text-gray-800 hover:bg-gray-100">
               <span>產品系列</span>
               <svg className="text-gray-400 h-5 w-5 focus:text-gray-600 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -88,7 +108,7 @@ export default function NavMenuResponsive({ categories, collections }) {
         </div>
 
         {/* ------------------------------------------ Dropdown Menus ------------------------------------------ */}
-        <button onClick={() => { setMenuAP(false); setMenuC(false); setMenuMobile(false); }} className={(menuAP || menuC || menuM ? " " : "hidden ") + "fixed top-0 right-0 bottom-0 left-0 h-full w-full cursor-default focus:outline-none"}></button>
+        <button onClick={() => toggleClose()} className={(menuAP || menuC || menuM ? " " : "hidden ") + "fixed top-0 right-0 bottom-0 left-0 h-full w-full cursor-default focus:outline-none"}></button>
         <DropdownAllProducts menu={menuAP} categories={categories} />
         <DropdownCollections menu={menuC} collections={collections} />
       </div>

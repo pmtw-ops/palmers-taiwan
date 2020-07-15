@@ -24,7 +24,7 @@ export default function DropdownAllProducts({ categories, menu }) {
           <nav className="grid row-gap-10 px-4 py-8 bg-white sm:grid-cols-2 sm:col-gap-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
             <div className="space-y-5">
               <h3 className="text-sm leading-5 font-medium tracking-wide text-gray-500 uppercase">
-                Company
+                Company ALL
                 </h3>
               <ul className="space-y-6">
                 <li className="flow-root">
