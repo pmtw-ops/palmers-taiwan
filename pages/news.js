@@ -5,6 +5,8 @@ import { getAllPostsForHome } from '@/lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 
+import CardProduct from '@/components/card-product'
+
 
 export default function Index({ categories, collections, allPosts, preview }) {
   // const heroPost = allPosts[0]
@@ -13,6 +15,8 @@ export default function Index({ categories, collections, allPosts, preview }) {
     <Layout categories={categories} collections={collections}>
       <Container>
         <p>This is NEWS page </p>
+
+        <CardProduct />
       </Container>
     </Layout>
 
