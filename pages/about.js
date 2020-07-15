@@ -6,11 +6,11 @@ import { CMS_NAME } from '@/lib/constants'
 import Container from '@/components/container'
 
 
-export default function Index({ allPosts, preview }) {
+export default function Index({ categories, collections, allPosts, preview }) {
   // const heroPost = allPosts[0]
   // const morePosts = allPosts.slice(1)
   return (
-    <Layout>
+    <Layout categories={categories} collections={collections}>
       <Container>
         <p>This is about page </p>
       </Container>
