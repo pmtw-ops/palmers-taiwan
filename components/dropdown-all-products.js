@@ -20,6 +20,9 @@ export default function DropdownAllProducts({ categories, menu }) {
           <div className="bg-white w-1/2"></div>
           <div className="bg-gray-50 w-1/2"></div>
         </div>
+        <div className="relative px-8 py-6 bg-gray-100 font-semibold">
+          <Link href="/products" passHref><a>產品分類</a></Link>
+        </div>
         <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
           <nav className="grid row-gap-10 px-4 py-8 bg-white sm:grid-cols-2 sm:col-gap-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
             <div className="space-y-5">

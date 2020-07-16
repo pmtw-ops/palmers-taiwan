@@ -1,15 +1,10 @@
-
 import Layout from '@/components/layout'
 import { getAllPostsForHome } from '@/lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 
 
-import Layout from '@/components/layout'
 import Container from '@/components/container'
-import { getAllPostsForHome } from '@/lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '@/lib/constants'
 
 import CardProduct from '@/components/card-product'
 
@@ -23,12 +18,12 @@ export default function Products({ categories, collections, product, allPosts, p
     <Layout categories={categories} collections={collections}>
       <Container>
         <p>This is NEWS page </p>
-        <div className="grid gap-4 grid-flow-row sm:grid-cols-2 lg:grid-cols-3">
-        <div className=""><CardProduct product={product} /></div>
-        <div className=""><CardProduct product={product} /></div>
-        <div className=""><CardProduct product={product} /></div>
-        <div className=""><CardProduct product={product} /></div>
-        <div className=""><CardProduct product={product} /></div>
+        <div className="grid gap-4 grid-flow-row sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className=""><CardProduct product={product} /></div>
+          <div className=""><CardProduct product={product} /></div>
+          <div className=""><CardProduct product={product} /></div>
+          <div className=""><CardProduct product={product} /></div>
+          <div className=""><CardProduct product={product} /></div>
         </div>
       </Container>
     </Layout>
