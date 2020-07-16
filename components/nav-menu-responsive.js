@@ -54,6 +54,9 @@ export default function NavMenuResponsive({ categories, collections }) {
               </svg>
             </button>
             <button type="button" className="px-4 text-pmbrown-500 font-medium focus:text-pmbrown-100 hover:text-pmbrown-100 focus:outline-none focus:text-pmbrown-100 transition ease-in-out duration-150">
+              <Link href="/news"><span>口碑分享</span></Link>
+            </button>
+            <button type="button" className="px-4 text-pmbrown-500 font-medium focus:text-pmbrown-100 hover:text-pmbrown-100 focus:outline-none focus:text-pmbrown-100 transition ease-in-out duration-150">
               <Link href="/news"><span>最新消息</span></Link>
             </button>
           </div>
@@ -99,6 +102,11 @@ export default function NavMenuResponsive({ categories, collections }) {
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </div>
+            <Link href="/news">
+              <div className="block p-1 m-1 text-pmbrown-500 rounded focus:text-pmbrown-100 hover:text-pmbrown-100 hover:bg-gray-100">
+                口碑分享
+              </div>
+            </Link>
             <Link href="/news">
               <div className="block p-1 m-1 text-pmbrown-500 rounded focus:text-pmbrown-100 hover:text-pmbrown-100 hover:bg-gray-100">
                 最新消息
