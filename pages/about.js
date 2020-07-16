@@ -53,7 +53,7 @@ export default function Index({ categories, collections, allPosts, preview }) {
 
       <Container>
         <div className="text-center p-3 m-7">
-          <div className="font-bold text-3xl p-3"><h1>和世界一起永續發展年</h1></div>
+          <div className="font-bold text-3xl p-3"><h1>和世界一起永續發展</h1></div>
         </div>
         <div className="grid gap-4 lg:gap-12 lg:grid-cols-2">
           <CardSustainability />
