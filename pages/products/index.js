@@ -1,5 +1,5 @@
 import Layout from '@/components/layout'
-import { getAllPostsForHome } from '@/lib/api'
+import { getAllProducts } from '@/lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 
@@ -32,8 +32,8 @@ export default function Products({ categories, collections, product, allPosts, p
 }
 
 export async function getStaticProps({ preview = null }) {
-  //const allPosts = (await getAllPostsForHome(preview)) || []
-  // console.log(allPosts)
+  const allProducts = (await getAllProducts(preview)) || []
+  console.log(allProducts, '----products')
 
   const product = {
     title: '帕瑪氏水嫩潔顏卸妝乳150g',
