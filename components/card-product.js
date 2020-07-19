@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 
 export default function CardProduct({ product, children }) {
-  console.log(product, 'ohhhh')
   return (
     <>
       <div className="w-full sm:max-w-sm shadow-lg border-1 bg-white overflow-hidden">
