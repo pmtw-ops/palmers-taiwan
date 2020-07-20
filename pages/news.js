@@ -5,7 +5,7 @@ import { getAllPostsForHome } from '@/lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 
-import CardProduct from '@/components/card-product'
+import CardProduct from '@/components/product/card-product'
 
 import Link from 'next/link'
 

@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 import Container from '@/components/container'
 import SectionSeparator from '@/components/section-separator'
-import CardSustainability from '@/components/card-sustainability'
+import CardSustainability from '@/components/about/card-sustainability'
 
 
 export default function Index({ categories, collections, allPosts, preview }) {
