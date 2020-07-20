@@ -6,7 +6,7 @@ import { CMS_NAME } from '@/lib/constants'
 
 import Container from '@/components/container'
 
-import CardProduct from '@/components/card-product'
+import CardProduct from '@/components/product/card-product'
 
 import Link from 'next/link'
 
