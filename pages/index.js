@@ -11,12 +11,10 @@ export default function Index({ collections, categories, allPosts, preview }) {
   // const heroPost = allPosts[0]
   // const morePosts = allPosts.slice(1)
 
-  const {user, setUser } = useContext(AppContext);
-  
+  const { user, setUser } = useContext(AppContext);
+
   return (
-    <Layout categories={categories} collections={collections}>
-
-
+    <>
       <div className="w-full px-6 py-12 bg-white">
         <div className="container max-w-4xl mx-auto text-center pb-10">
 
@@ -79,7 +77,7 @@ export default function Index({ collections, categories, allPosts, preview }) {
       </div>
 
 
-    </Layout>
+    </>
 
   )
 }

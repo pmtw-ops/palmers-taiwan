@@ -6,9 +6,6 @@
 //   return <Component {...pageProps} />
 // }
 
-
-
-
 /* _app.js */
 import '@/styles/index.css'
 import React from "react";
@@ -17,6 +14,7 @@ import Head from "next/head";
 import Cookie from "js-cookie";
 import fetch from "isomorphic-fetch";
 import AppContext from "@/context/appcontext";
+import Layout from '@/components/layout';
 
 class MyApp extends App {
   state = {
@@ -26,6 +24,20 @@ class MyApp extends App {
   componentDidMount() {
     // grab token value from cookie
     const token = Cookie.get("token");
+    // restore cart from cookie, this could also be tracked in a db
+    const cart = Cookie.get("cart");
+    //if items in cart, set items and total from cookie
+    console.log(cart, token);
+
+
+    if (typeof cart === "string" && cart !== "undefined") {
+      console.log("foyd");
+      JSON.parse(cart).forEach((item) => {
+        this.setState({
+          cart: { items: cart, total: item.price * item.quantity },
+        });
+      });
+    }
 
     if (token) {
       // authenticate the token on the server and place set user object
@@ -50,7 +62,71 @@ class MyApp extends App {
   setUser = (user) => {
     this.setState({ user });
   };
+  addItem = (item) => {
+    let { items } = this.state.cart;
+    //check for item already in cart
+    //if not in cart, add item if item is found increase quanity ++
+    const newItem = items.find((i) => i.id === item.id);
+    // if item is not new, add to cart, set quantity to 1
+    if (!newItem) {
+      //set quantity property to 1
+      item.quantity = 1;
+      console.log(this.state.cart.total, item.price);
+      this.setState(
+        {
+          cart: {
+            items: [...items, item],
+            total: this.state.cart.total + item.price,
+          },
+        },
+        () => Cookie.set("cart", this.state.items)
+      );
+    } else {
+      this.setState(
+        {
+          cart: {
+            items: this.state.cart.items.map((item) =>
+              item.id === newItem.id
+                ? Object.assign({}, item, { quantity: item.quantity + 1 })
+                : item
+            ),
+            total: this.state.cart.total + item.price,
+          },
+        },
+        () => Cookie.set("cart", this.state.items)
+      );
+    }
+  };
+  removeItem = (item) => {
+    let { items } = this.state.cart;
+    //check for item already in cart
+    //if not in cart, add item if item is found increase quanity ++
+    const newItem = items.find((i) => i.id === item.id);
+    if (newItem.quantity > 1) {
+      this.setState(
+        {
+          cart: {
+            items: this.state.cart.items.map((item) =>
+              item.id === newItem.id
+                ? Object.assign({}, item, { quantity: item.quantity - 1 })
+                : item
+            ),
+            total: this.state.cart.total - item.price,
+          },
+        },
+        () => Cookie.set("cart", this.state.items)
+      );
+    } else {
+      const items = [...this.state.cart.items];
+      const index = items.findIndex((i) => i.id === newItem.id);
 
+      items.splice(index, 1);
+      this.setState(
+        { cart: { items: items, total: this.state.cart.total - item.price } },
+        () => Cookie.set("cart", this.state.items)
+      );
+    }
+  };
   render() {
     const { Component, pageProps } = this.props;
 
@@ -60,6 +136,9 @@ class MyApp extends App {
           user: this.state.user,
           isAuthenticated: !!this.state.user,
           setUser: this.setUser,
+          cart: this.state.cart,
+          addItem: this.addItem,
+          removeItem: this.removeItem,
         }}
       >
         <Head>
@@ -70,8 +149,9 @@ class MyApp extends App {
             crossOrigin="anonymous"
           />
         </Head>
-
-        <Component {...pageProps} />
+        <Layout categories={pageProps.categories} collections={pageProps.collections}>
+          <Component {...pageProps} />
+        </Layout>
       </AppContext.Provider>
     );
   }
@@ -88,6 +168,8 @@ MyApp.getInitialProps = async (appContext) => {
 
   appProps.pageProps['categories'] = categoriesTestData;
   appProps.pageProps['collections'] = collectionsTestData;
+
+  console.log(appContext)
 
   return { ...appProps }
 }

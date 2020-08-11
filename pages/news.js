@@ -14,18 +14,16 @@ export default function Index({ categories, collections, product, allPosts, prev
   // const heroPost = allPosts[0]
   // const morePosts = allPosts.slice(1)
   return (
-    <Layout categories={categories} collections={collections}>
-      <Container>
-        <p>This is NEWS page </p>
-        <div className="grid gap-4 grid-flow-row sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <Container>
+      <p>This is NEWS page </p>
+      <div className="grid gap-4 grid-flow-row sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <div className=""><CardProduct product={product} /></div>
         <div className=""><CardProduct product={product} /></div>
         <div className=""><CardProduct product={product} /></div>
         <div className=""><CardProduct product={product} /></div>
         <div className=""><CardProduct product={product} /></div>
-        </div>
-      </Container>
-    </Layout>
+      </div>
+    </Container>
 
   )
 }

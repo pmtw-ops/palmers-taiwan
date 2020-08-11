@@ -16,7 +16,7 @@ export default function Index({ categories, collections, allPosts, preview }) {
   let years = today.getFullYear() - 1840
 
   return (
-    <Layout categories={categories} collections={collections}>
+    <>
       <Container>
         <div>
           <img src="/img/about-us-real-heritage.jpg" alt=""></img>
@@ -66,7 +66,7 @@ export default function Index({ categories, collections, allPosts, preview }) {
         </div>
       </Container>
       <div className="p-4">{' '}</div>
-    </Layout>
+    </>
   )
 }
 
