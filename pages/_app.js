@@ -27,7 +27,7 @@ class MyApp extends App {
     // restore cart from cookie, this could also be tracked in a db
     const cart = Cookie.get("cart");
     //if items in cart, set items and total from cookie
-    console.log(cart, token);
+    //console.log(cart, token);
 
 
     if (typeof cart === "string" && cart !== "undefined") {
@@ -169,7 +169,7 @@ MyApp.getInitialProps = async (appContext) => {
   appProps.pageProps['categories'] = categoriesTestData;
   appProps.pageProps['collections'] = collectionsTestData;
 
-  console.log(appContext)
+  // console.log(appContext)
 
   return { ...appProps }
 }

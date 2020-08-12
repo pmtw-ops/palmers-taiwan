@@ -16,8 +16,7 @@ export default function Products({ categories, collections, product, allPosts, p
   // const morePosts = allPosts.slice(1)
   return (
     <Container>
-      <p>This is NEWS page </p>
-      <div className="grid gap-4 grid-flow-row sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid gap-4 grid-flow-row mt-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <div className=""><CardProduct product={product} /></div>
         <div className=""><CardProduct product={product} /></div>
         <div className=""><CardProduct product={product} /></div>
