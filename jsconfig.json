@@ -8,6 +8,7 @@
       "@/components/category/*": ["components/category/*"],
       "@/components/collection/*": ["components/collection/*"],
       "@/components/home/*": ["components/home/*"],
+      "@/components/legal/*": ["components/legal/*"],
       "@/components/product/*": ["components/product/*"],
       "@/lib/*": ["lib/*"],
       "@/styles/*": ["styles/*"],

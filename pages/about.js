@@ -1,6 +1,5 @@
 
 import Layout from '@/components/layout'
-import { getAllPostsForHome } from '@/lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 import Container from '@/components/container'

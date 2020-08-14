@@ -1,5 +1,5 @@
 import Layout from '@/components/layout'
-import { getAllProducts } from '@/lib/api'
+import { getAllProducts } from '@/lib/api_products'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 

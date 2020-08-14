@@ -15,7 +15,7 @@ export default function Index({ categories, collections, product, allPosts, prev
   // const morePosts = allPosts.slice(1)
   return (
     <Container>
-      <p>This is CART page </p>
+      <p>This is CONTACT US page </p>
     </Container>
 
   )
