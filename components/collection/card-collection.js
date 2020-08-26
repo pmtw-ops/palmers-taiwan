@@ -1,22 +1,21 @@
 import Link from 'next/link'
 
 
-export default function CardCollection({ product, children }) {
-  console.log(product, 'ohhhh')
+export default function CardCollection({ i, product, children }) {
   return (
-    <>
-      <div className="w-full sm:max-w-sm shadow-lg border-1 bg-white overflow-hidden">
-        <img className="h-64 w-full object-cover" src={product.image} alt=""></img>
-        <div className="p-4">
-          <div className="text-pmbrown-500 text-sm truncate">{product.shortDesc}</div>
-          <div className="mt-4 font-bold truncate">{product.title}</div>
-          <div className="mt-4 flex justify-between item-baseline">
-            <div className=""><span className="text-xs">NTD$</span> {product.price}</div>
-            <div className=""><span className="text-pmbrown-100 text-sm">{product.rating}</span> <span className="text-pmbrown-400 text-xs">/5</span></div>
-          </div>
-        </div>
+    <div className="block m-4 bg-white shadow-sm md:flex">
+      <div className={i % 2 === 0 ? "" : "md:hidden"}>
+        <img className="h-full w-full object-cover" src={product.image} alt=""></img>
       </div>
-      <div className="p-4">{' '}</div>
-    </>
+
+      <div className="block w-full text-center">
+        <h1 className="text-pmbrown-600 p-4 text-6xl">{product.title}</h1>
+        <button className="bg-pmbrown-300 text-gray-100 rounded-md p-2 m-2 hover:bg-pmbrown-100 lg:mt-10">SOMETHING</button>
+      </div>
+
+      <div className={i % 2 === 0 ? "hidden" : "hidden md:block"}>
+        <img className="h-full w-full object-cover" src={product.image} alt=""></img>
+      </div>
+    </div>
   )
 }
