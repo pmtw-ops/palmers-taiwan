@@ -9,6 +9,8 @@ import CardProduct from '@/components/product/card-product'
 
 import Link from 'next/link'
 
+const NEXT_PUBLIC_STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL
+
 
 export default function Index({ categories, collections, product, allPosts, preview }) {
   // const heroPost = allPosts[0]

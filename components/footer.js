@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="block md:flex w-full py-2 pt-2 justify-center text-sm bg-gray-600">
         <div className="p-2 text-gray-100 hover:text-pmbrown-100"><Link href="/" passHref><a className="hover:text-pmbrown-100">首頁</a></Link></div>
         <div className="p-2 text-gray-100 hover:text-pmbrown-100"><Link href="/about"><a className="hover:text-pmbrown-100">關於我們</a></Link></div>
-        <div className="p-2 text-gray-100 hover:text-pmbrown-100"><Link href="/contact-us"><a className="hover:text-pmbrown-100">聯絡npm 我們</a></Link></div>
+        <div className="p-2 text-gray-100 hover:text-pmbrown-100"><Link href="/contact-us"><a className="hover:text-pmbrown-100">聯絡我們</a></Link></div>
         <div className="p-2 text-gray-100 hover:text-pmbrown-100"><Link href="/news"><a className="hover:text-pmbrown-100">最新消息</a></Link></div>
         <div className="p-2 text-gray-100 hover:text-pmbrown-100"><Link href="/returns"><a className="hover:text-pmbrown-100">退換貨須知</a></Link></div>
         <div className="p-2 text-gray-100 hover:text-pmbrown-100"><Link href="/terms"><a className="hover:text-pmbrown-100">服務約定條款</a></Link></div>
