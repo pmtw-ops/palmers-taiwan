@@ -44,3 +44,7 @@ export async function getStaticProps({ preview = null }) {
     props: { product } //allPosts, preview },
   }
 }
+
+export async function getStaticPath () {
+  return;
+}
