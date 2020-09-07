@@ -30,6 +30,6 @@ export async function getStaticProps({ preview = null }) {
   }
 }
 
-export async function getStaticPath () {
+export async function getStaticPaths () {
   return;
 }
