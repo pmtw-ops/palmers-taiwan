@@ -29,7 +29,3 @@ export async function getStaticProps({ preview = null }) {
     props: { allCollections } //allPosts, preview },
   }
 }
-
-export async function getStaticPaths () {
-  return;
-}
