@@ -1,4 +1,11 @@
 @tailwind base;
+
+@font-face {
+  font-family: JhengHei;
+  font-weight: 400;
+  src: local('JhengHei'), url(../public/font/標楷體.ttf) format("ttf");
+}
+
 @tailwind components;
 @tailwind utilities;
 

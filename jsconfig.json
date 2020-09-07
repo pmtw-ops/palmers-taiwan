@@ -3,8 +3,16 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
+      "@/components/about/*": ["components/about/*"],
+      "@/components/cart/*": ["components/cart/*"],
+      "@/components/category/*": ["components/category/*"],
+      "@/components/collection/*": ["components/collection/*"],
+      "@/components/home/*": ["components/home/*"],
+      "@/components/legal/*": ["components/legal/*"],
+      "@/components/product/*": ["components/product/*"],
       "@/lib/*": ["lib/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/context/*": ["context/*"]
     }
   }
 }

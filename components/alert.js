@@ -5,13 +5,13 @@ import { EXAMPLE_PATH } from '@/lib/constants'
 export default function Alert({ preview }) {
   return (
     <div
-      className={cn('border-b', {
+      className={cn('bg-pmbrown-800 text-gray-300', {
         'bg-accent-7 border-accent-7 text-white': preview,
-        'bg-accent-1 border-accent-2': !preview,
+        'border-t-2 border-orange-500': !preview,
       })}
     >
       <Container>
-        <div className="py-2 text-center text-sm">
+        <div className="py-2 text-center text-sm bg-pmbrown-800">
           {preview ? (
             <>
               This is page is a preview.{' '}
