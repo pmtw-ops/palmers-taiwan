@@ -46,5 +46,5 @@ export async function getStaticProps({ preview = null }) {
 }
 
 export async function getStaticPaths () {
-  return { paths: [], fallback: false };
+  return { paths: [], fallback: true };
 }
