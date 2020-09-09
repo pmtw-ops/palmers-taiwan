@@ -1,31 +1,21 @@
 import Container from '@/components/container'
-import Layout from '@/components/layout'
-import { getAllPostsForHome } from '@/lib/api_products'
+import { getHomePage } from '@/lib/api_home'
 import Head from 'next/head'
-import { CMS_NAME } from '@/lib/constants'
+import { CMS_URL } from '@/lib/constants'
 import React, { useContext } from "react";
 import AppContext from "@/context/appcontext";
 
-
-export default function Index({ collections, categories, allPosts, preview }) {
-  // const heroPost = allPosts[0]
-  // const morePosts = allPosts.slice(1)
-
-  const { user, setUser } = useContext(AppContext);
-
+export default function Index({ home }) {
   return (
     <Container>
-      <div>Home Page</div>
-
+      <div>{home.title}</div>
     </Container>
-
   )
 }
 
-// export async function getStaticProps({ preview = null }) {
-//   //const allPosts = (await getAllPostsForHome(preview)) || []
-//   console.log(allPosts)
-//   return {
-//     props: {} //allPosts, preview },
-//   }
-// }
+export async function getStaticProps({ preview = null }) {
+  const home = (await getHomePage(preview)) || []
+  return {
+    props: { home }
+  }
+}
