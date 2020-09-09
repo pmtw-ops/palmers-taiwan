@@ -5,7 +5,6 @@ import Header from './header'
 import Navbar from './navbar'
 
 export default function Layout({ categories, collections, preview, children }) {
-  console.log(categories, collections, 'LAYOUT')
   return (
     <>
       <Meta />

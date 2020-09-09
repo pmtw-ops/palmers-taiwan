@@ -50,7 +50,7 @@ export default function Index({ categories, collections, allPosts, preview }) {
         <SectionSeparator />
       </Container>
 
-      <Container>
+      {/* <Container>
         <div className="text-center p-3 m-7">
           <div className="font-bold text-3xl p-3"><h1>和世界一起永續發展</h1></div>
         </div>
@@ -63,8 +63,8 @@ export default function Index({ categories, collections, allPosts, preview }) {
           <CardSustainability />
           <CardSustainability />
         </div>
-      </Container>
-      <div className="p-4">{' '}</div>
+      </Container> */}
+      {/* <div className="p-4">{' '}</div> */}
     </>
   )
 }
