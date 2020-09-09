@@ -6,12 +6,10 @@ import React, { useContext } from "react";
 import AppContext from "@/context/appcontext";
 
 export default function Index({ home }) {
-  console.log(CMS_URL)
   return (
     <Container>
       <div>{home.title}</div>
     </Container>
-
   )
 }
 
