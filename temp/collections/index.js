@@ -21,6 +21,8 @@ export default function Collections({ allCollections, allPosts, preview }) {
   )
 }
 
+
+
 export async function getStaticProps({ preview = null }) {
   const allCollections = (await getAllCollections(preview)) || []
   // console.log(allCollections)
