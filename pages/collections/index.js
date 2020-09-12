@@ -13,7 +13,7 @@ export default function Collections({ allCollections, allPosts, preview }) {
     <>
       <img className="" src="https://placehold.it/1920x550" alt=""></img>
       <Container>
-        {allCollections.map((collection, i) => { console.log(i); return <CardCollection key={i} i={i} collection={collection} /> })}
+        {allCollections.map((collection, i) => (<CardCollection key={i} i={i} collection={collection} />))}
       </Container>
     </>
   )
