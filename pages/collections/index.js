@@ -9,13 +9,12 @@ import Link from 'next/link'
 
 
 export default function Collections({ allCollections, allPosts, preview }) {
-  console.log(allCollections)
   return (
     <>
       <img className="" src="https://placehold.it/1920x550" alt=""></img>
       <Container>
-      {allCollections.map( (collection, i)  => (<CardCollection i={i} collection={collection} />))}
-        
+        {allCollections.map((collection, i) => (<CardCollection i={i} collection={collection} />))}
+
       </Container>
     </>
   )
