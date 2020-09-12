@@ -48,7 +48,7 @@ export default function NavMenuResponsive({ categories, collections }) {
               </svg>
             </button> */}
             <button type="button" onClick={() => toggleC()} className="px-4 text-pmbrown-500 group inline-flex items-center space-x-2 text-base leading-6 font-medium focus:text-pmbrown-100 hover:text-pmbrown-100 focus:outline-none focus:text-pmbrown-100 transition ease-in-out duration-150">
-              <span>產品系列</span>
+              <Link href="/collections"><span>產品系列</span></Link>
               <svg className="text-pmbrown-500 h-5 w-5 focus:text-gray-600 group-hover:text-pmbrown-100 group-focus:text-pmbrown-100 transition ease-in-out duration-150" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>

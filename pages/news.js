@@ -19,14 +19,7 @@ export default function Index({ categories, collections, product, allPosts, prev
     <>
       <img className="" src="https://placehold.it/1920x550" alt=""></img>
       <Container>
-        <p>This is NEWS page </p>
-        <div className="grid gap-4 grid-flow-row sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div className=""><CardProduct product={product} /></div>
-          <div className=""><CardProduct product={product} /></div>
-          <div className=""><CardProduct product={product} /></div>
-          <div className=""><CardProduct product={product} /></div>
-          <div className=""><CardProduct product={product} /></div>
-        </div>
+        <p className="text-center text-6xl">This is NEWS page. I'm still under development. </p>
       </Container>
     </>
   )
