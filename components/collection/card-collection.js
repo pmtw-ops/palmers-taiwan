@@ -1,10 +1,13 @@
 import Link from 'next/link'
-import { CMS_URL } from '@/lib/constants'
+// import { CMS_URL } from '@/lib/constants'
+
+const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === true ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
 
 export default function CardCollection({ i, collection }) {
   let image = collection.images ? collection.images[0] : undefined
   let imgUrl = image ? CMS_URL + image.formats.medium.url.replace("medium_", "") : "https://placehold.it/1000x550"
   let imgAlt = image ? image.alternativeText : "temp"
+  
   return (
     <div className="block m-4 bg-white shadow-sm md:flex" key={i}>
       <div className={i % 2 === 0 ? "" : "md:hidden"}>
