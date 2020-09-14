@@ -162,9 +162,9 @@ const categoriesTestData = ['Cat1', 'Cat2', 'Cat3', 'Cat4', 'Cat5'];
 const collectionsTestData = ['Col1', 'Col2', 'Col3', 'Col4', 'Col5',];
 
 // Pass Navbar datas ...
-MyApp.getInitialProps = async (appContext) => {
+MyApp.getStaticProps = async (appContext) => {
   // calls page's `getInitialProps` and fills `appProps.pageProps`
-  const appProps = await App.getInitialProps(appContext);
+  const appProps = await App.getStaticProps(appContext);
 
   appProps.pageProps['categories'] = categoriesTestData;
   appProps.pageProps['collections'] = collectionsTestData;

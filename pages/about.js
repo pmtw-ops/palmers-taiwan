@@ -1,7 +1,6 @@
 
 import Layout from '@/components/layout'
 import Head from 'next/head'
-import { CMS_NAME } from '@/lib/constants'
 import Container from '@/components/container'
 import SectionSeparator from '@/components/section-separator'
 import CardSustainability from '@/components/about/card-sustainability'
