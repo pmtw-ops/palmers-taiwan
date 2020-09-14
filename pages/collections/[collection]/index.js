@@ -50,7 +50,6 @@ export async function getStaticProps({ params }) {
 
   // Pass post data to the page via props
   return {
-    props: { oneCollectionProducts },
-    revalidate: 1
+    props: { oneCollectionProducts }
   }
 }
