@@ -5,7 +5,7 @@ export default function Header() {
     <header className="w-full px-6 bg-white">
       <div className="container content-center mx-auto max-w-6xl md:flex justify-between items-center">
         <Link href="/" passHref>
-          <a href="#" className="block py-6 w-full text-center w-auto text-gray-600 no-underline flex justify-center items-center cursor-default">
+          <a className="block py-6 w-full text-center w-auto text-gray-600 no-underline cursor-default">
             Palmers Taiwan
 				  </a>
         </Link>

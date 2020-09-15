@@ -46,7 +46,6 @@ export default function Index({ categories, collections, allPosts, preview }) {
           </div>
 
         </div>
-        <SectionSeparator />
       </Container>
 
       {/* <Container>

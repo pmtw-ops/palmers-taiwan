@@ -9,7 +9,7 @@ export default function CardCollection({ i, collection }) {
   let imgAlt = image ? image.alternativeText : "temp"
   
   return (
-    <div className="block m-4 bg-white shadow-sm md:flex" key={i}>
+    <div className="block m-4 bg-white shadow-md md:flex" key={i}>
       <div className={i % 2 === 0 ? "" : "md:hidden"}>
         <img className="h-full w-full object-cover" src={imgUrl} alt=""></img>
       </div>
