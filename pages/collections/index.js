@@ -11,7 +11,9 @@ export default function Collections({ allCollections }) {
     <>
       <img className="" src="https://placehold.it/1920x550" alt=""></img>
       <Container>
+        <div className="p-2">
         {allCollections.map((collection, i) => (<CardCollection key={i} i={i} collection={collection} />))}
+        </div>
       </Container>
     </>
   )

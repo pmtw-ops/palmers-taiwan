@@ -15,6 +15,7 @@ module.exports = {
         'accent-7': '#333',
         success: '#0070f3',
         cyan: '#79FFE1',
+        pmpink: '#fbf5ed',
         pmbrown: {
           '50': '#d36b45',
           '100': '#cf5b30',
