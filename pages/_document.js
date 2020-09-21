@@ -4,7 +4,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="zh-Hant">
-        <Head />
+        <Head></Head>
         <body className="bg-pmpink text-pmbrown-800 antialiased">
           <Main />
           <NextScript />
