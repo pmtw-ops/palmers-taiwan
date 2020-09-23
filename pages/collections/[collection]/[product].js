@@ -1,6 +1,7 @@
 import Container from '@/components/container'
 import { getAllProductPaths, getOneProductDetails } from '@/lib/api_collections'
 import { useRouter } from 'next/router'
+import markdownToHtml from '@/lib/markdownToHtml'
 import Head from 'next/head'
 
 import CardProduct from '@/components/product/card-product'
@@ -13,6 +14,7 @@ export default function Product({ product, allPosts, preview }) {
   // const morePosts = allPosts.slice(1)
   const router = useRouter()
 
+  console.log(product)
   if (router.isFallback) {
     return <div className="text-center text-6xl">Loading...</div>
   }
@@ -23,6 +25,9 @@ export default function Product({ product, allPosts, preview }) {
       <Container>
         <div>
           {product.name}
+        </div>
+        <div>
+          {product.description}
         </div>
       </Container>
     </>
@@ -35,14 +40,21 @@ export async function getStaticPaths() {
   const allProductPaths = (await getAllProductPaths()) || []
 
   // Get the paths we want to pre-render based on collections
-  const paths = allProductPaths.map((path) => ({
-    params: {
-      product: path.product,
-      collection: path.collection
-    },
-  }))
+  const paths = allProductPaths.map((path) => {
+    var p = path?.product;
+    var c = path?.collections[0];
+    c = c?.name;
+    
+    if (p.length > 0 && c !== undefined) {
+      return {
+        params: {
+          product: p,
+          collection: c
+        }
+      }
+    }
+  })
 
-  console.log(paths)
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
   return { paths, fallback: true }
@@ -53,6 +65,14 @@ export async function getStaticProps({ params }) {
   let products = (await getOneProductDetails(params)) || []
 
   let product = products.length > 0 ? products[0] : {}
+
+  let description = await markdownToHtml(product.description)
+  description = description.split('\n')
+
+  product = {
+    name: product.name,
+    description: description
+  }
   // Pass post data to the page via props
   return {
     props: { product }
