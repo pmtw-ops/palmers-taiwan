@@ -3,6 +3,7 @@ import Link from 'next/link'
 export default function CardProduct({ product }) {
   let image = product?.image;
   let imgUrl = image ? CMS_URL + image.formats.medium.url.replace("medium_", "") : "https://placehold.it/550x550"
+  console.log(product)
   return (
     <>
       <div className="w-full sm:max-w-sm shadow-lg border-1 bg-white overflow-hidden">
