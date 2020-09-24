@@ -69,8 +69,10 @@ export async function getStaticProps({ params }) {
   let description = await markdownToHtml(product.description)
   description = description.split('\n')
 
+  productName = product?.name;
+
   product = {
-    name: product.name,
+    name: productName,
     description: description
   }
   // Pass post data to the page via props
