@@ -1,18 +1,23 @@
 import Container from '@/components/container'
 // import { getAllPostsForHome } from '@/lib/api_products'
-import { getAllCollections } from '@/lib/api_collections'
+import { getAllCollections, getCollectionsStatic } from '@/lib/api_collections'
 import Head from 'next/head'
 import CardCollection from '@/components/collection/card-collection'
 import Link from 'next/link'
 
-export default function Collections({ allCollections }) {
-  
+const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+
+export default function Collections({ allCollections, collectionsStatic }) {
+  let bannerImage = collectionsStatic.image[0];
+  let bannerImageAlt = bannerImage ? collectionsStatic.image[0].alternativeText : ""
+  let imgUrl = bannerImage ? CMS_URL + collectionsStatic.image[0].formats.thumbnail.url.replace('thumbnail_', '') : "https://placehold.it/1920x550"
+
   return (
     <>
-      <img className="" src="https://placehold.it/1920x550" alt=""></img>
+      <img className="" src={imgUrl} alt={bannerImageAlt}></img>
       <Container>
         <div className="p-2">
-        {allCollections.map((collection, i) => (<CardCollection key={i} i={i} collection={collection} />))}
+          {allCollections.map((collection, i) => (<CardCollection key={i} i={i} collection={collection} />))}
         </div>
       </Container>
     </>
@@ -20,9 +25,10 @@ export default function Collections({ allCollections }) {
 }
 
 export async function getStaticProps({ preview = null }) {
-  const allCollections = (await getAllCollections(preview)) || []
+  const allCollections = (await getAllCollections()) || []
+  const collectionsStatic = (await getCollectionsStatic()) || []
 
   return {
-    props: { allCollections }
+    props: { allCollections, collectionsStatic }
   }
 }
