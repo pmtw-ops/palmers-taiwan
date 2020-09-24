@@ -69,7 +69,7 @@ export async function getStaticProps({ params }) {
   let description = await markdownToHtml(product.description)
   description = description.split('\n')
 
-  productName = product?.name;
+  let productName = product?.name;
 
   product = {
     name: productName,
