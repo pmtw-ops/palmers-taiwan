@@ -10,16 +10,16 @@ export default function CardCollection({ i, collection }) {
   let collectionPath = '/collections/' + collection.name
   return (
     <div className="block m-4 bg-white shadow-md items-center md:flex" key={i}>
-      <div className={i % 2 === 0 ? "" : "md:hidden"}>
+      <div className={i % 2 === 0 ? "cursor-pointer" : "md:hidden"}>
         <Link href={collectionPath} passHref><img className="h-full w-full object-cover" src={imgUrl} alt={imgAlt}></img></Link>
       </div>
 
       <div className="block w-full text-center">
-        <Link href={collectionPath} passHref><h1 className="text-pmbrown-600 p-4 text-6xl">{collection.name}</h1></Link>
-        <Link href={collectionPath} passHref><button className="bg-pmbrown-300 text-gray-100 rounded-md p-2 m-2 hover:bg-pmbrown-100 lg:mt-10">了解更多</button></Link>
+        <Link href={collectionPath} passHref><h1 className="text-pmbrown-600 p-4 cursor-pointer text-6xl">{collection.name}</h1></Link>
+        <Link href={collectionPath} passHref><button className="bg-pmbrown-300 text-gray-100 rounded-md p-2 m-2 cursor-pointer hover:bg-pmbrown-100 lg:mt-10">了解更多</button></Link>
       </div>
 
-      <div className={i % 2 === 0 ? "hidden" : "hidden md:block"}>
+      <div className={i % 2 === 0 ? "hidden" : "hidden md:block md:cursor-pointer"}>
         <Link href={collectionPath} passHref><img className="h-full w-full object-cover" src={imgUrl} alt=""></img></Link>
       </div>
     </div>
