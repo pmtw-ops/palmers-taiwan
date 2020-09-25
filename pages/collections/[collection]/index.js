@@ -7,8 +7,6 @@ export default function Collection({ oneCollectionProducts }) {
   const products = oneCollectionProducts?.products;
   const router = useRouter()
 
-  console.log(products, '..................')
-
   if (router.isFallback) {
     return <div className="text-center text-6xl">Loading...</div>
   }
@@ -17,7 +15,7 @@ export default function Collection({ oneCollectionProducts }) {
     <>
       <img className="" src="https://placehold.it/1920x550" alt=""></img>
       <Container>
-        <div className="grid m-4 gap-4 grid-flow-row sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <div className="grid mt-4 p-2 gap-4 grid-flow-row sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {products.map((product, i) => (
             <div className="" key={i}>
               <CardProduct i={i} product={product} />
