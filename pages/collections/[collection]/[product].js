@@ -63,7 +63,6 @@ export async function getStaticPaths() {
 // This also gets called at build time
 export async function getStaticProps({ params }) {
   let products = (await getOneProductDetails(params)) || []
-
   let product = products.length > 0 ? products[0] : {}
 
   let description = await markdownToHtml(product.description)

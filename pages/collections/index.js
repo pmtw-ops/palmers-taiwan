@@ -16,7 +16,7 @@ export default function Collections({ allCollections, collectionsStatic }) {
     <>
       <img className="" src={imgUrl} alt={bannerImageAlt}></img>
       <Container>
-        <div className="p-2">
+        <div className="">
           {allCollections.map((collection, i) => (<CardCollection key={i} i={i} collection={collection} />))}
         </div>
       </Container>
