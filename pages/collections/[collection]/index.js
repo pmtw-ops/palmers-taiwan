@@ -13,11 +13,11 @@ export default function Collection({ oneCollectionProducts }) {
 
   return (
     <>
-      <img className="" src="https://placehold.it/1920x550" alt=""></img>
+      <img className="" src="https://placehold.it/1920x650" alt=""></img>
       <Container>
-        <div className="grid mt-4 p-2 gap-4 grid-flow-row sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="flex justify-center flex-wrap sm:grid text-center mt-4 gap-6 justify-items-stretch sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {products.map((product, i) => (
-            <div className="" key={i}>
+            <div className="w-10/12 max-w-xs w-full" key={i}>
               <CardProduct i={i} product={product} />
             </div>
           ))}

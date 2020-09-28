@@ -26,7 +26,7 @@ export default function Index({ categories, collections, allPosts, preview }) {
         </div>
       </Container>
 
-      <div className="m-4 grid lg:grid-cols-2">
+      <div className="m-4 flex justify-center flex-wrap lg:grid lg:grid-cols-2">
         <div className="col-span-1 text-center p-1 m-4">
           <div className="font-bold text-lg p-1">獨特完美的天然配方</div>
           <p>帕瑪氏商品最核心的三種天然組合成分，可可脂、橄欖脂、乳木果都是萃取自神奇的大自然。由這三大主要成分研發及推出四大品牌，完整身體及髮部一系列商品，從頭到腳全方位呵護您全身肌膚。</p>
@@ -36,7 +36,7 @@ export default function Index({ categories, collections, allPosts, preview }) {
         </div>
       </div>
 
-      <div className="m-4 grid lg:grid-cols-2">
+      <div className="m-4 flex justify-center flex-wrap lg:grid lg:grid-cols-2">
         <div className="col-span-1 m-2 opacity-75">
           <img className="" src="/img/wylly-suhendra-Swk4G_xi_uM-unsplash.jpg" alt=""></img>
         </div>

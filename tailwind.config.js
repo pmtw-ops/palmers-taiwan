@@ -96,6 +96,9 @@ module.exports = {
         "sq-640": "320px"
       },
     },
+    container: {
+      center: true,
+    },
   },
   variants: {
     display: ['responsive', 'hover', 'focus', 'group-hover'],

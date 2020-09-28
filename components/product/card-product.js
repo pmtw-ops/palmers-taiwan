@@ -4,7 +4,7 @@ const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT
 
 export default function CardProduct({ product }) {
   let images = product?.images[0];
-  let imgUrl = images ? CMS_URL + images.formats.medium.url.replace("medium_", "") : "https://placehold.it/550x550"
+  let imgUrl = images ? CMS_URL + images.formats.medium.url.replace("", "") : "https://placehold.it/550x550"
   console.log(product, '-----------------')
 
 
@@ -15,10 +15,12 @@ export default function CardProduct({ product }) {
   let p_url = '/collections/' + collection + '/' + name;
   return (
     <>
-      <div className="w-full sm:max-w-sm shadow-lg border-1 bg-white overflow-hidden">
-        <Link href={p_url}><img className="h-64 p-2 w-full object-cover" src={imgUrl} alt=""></img></Link>
-        <div className="p-4">
-          <h2 className="text-pmbrown-500 text-sm truncate">{name}</h2>
+      <div className="rounded-lg shadow-lg border-1 bg-white overflow-hidden">
+        <div className="relative" style={{paddingBottom: "100%"}}>
+          <img className="absolute p-6 md:p-0 object-cover" src={imgUrl} alt=""></img>
+        </div>
+        <div className="p-4 mt-4">
+          <Link href={p_url} passHref><h2 className="text-pmbrown-500 text-sm truncate">{name}</h2></Link>
           <div className="text-pmbrown-500 text-sm truncate">{name_en}</div>
           <div className="text-pmbrown-500 text-sm truncate">{collection}</div>
           <button>Learn More</button>
