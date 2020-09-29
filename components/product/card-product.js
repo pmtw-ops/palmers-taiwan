@@ -5,22 +5,21 @@ const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT
 export default function CardProduct({ product }) {
   let images = product?.images[0];
   let imgUrl = images ? CMS_URL + images.formats.medium.url.replace("", "") : "https://placehold.it/550x550"
-  console.log(product, '-----------------')
-
 
   let collection = product?.collections[0].name;
   let name = product?.name;
   let name_en = product?.name_en;
+  let sku = product?.sku;
 
-  let p_url = '/collections/' + collection + '/' + name;
+  let p_url = '/collections/' + collection + '/' + sku;
   return (
     <>
-      <div className="rounded-lg shadow-lg border-1 bg-white overflow-hidden">
+      <div className="cursor-default rounded-lg shadow-lg border-1 bg-white overflow-hidden">
         <div className="relative" style={{paddingBottom: "100%"}}>
           <img className="absolute p-6 md:p-0 object-cover" src={imgUrl} alt=""></img>
         </div>
         <div className="p-4 mt-4">
-          <Link href={p_url} passHref><h2 className="text-pmbrown-500 text-sm truncate">{name}</h2></Link>
+          <Link href={p_url} passHref><h2 className="cursor-pointer text-pmbrown-500 text-sm truncate">{name}</h2></Link>
           <div className="text-pmbrown-500 text-sm truncate">{name_en}</div>
           <div className="text-pmbrown-500 text-sm truncate">{collection}</div>
           <button>Learn More</button>
