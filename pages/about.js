@@ -26,17 +26,17 @@ export default function Index({ categories, collections, allPosts, preview }) {
         </div>
       </Container>
 
-      <div className="m-4 grid lg:grid-cols-2">
-        <div className="col-span-1 text-center p-1 m-4">
+      <div className="m-4 flex items-center justify-center flex-wrap lg:grid lg:grid-cols-2">
+        <div className="order-2 lg:order-1 col-span-1 text-center p-1 m-4">
           <div className="font-bold text-lg p-1">獨特完美的天然配方</div>
           <p>帕瑪氏商品最核心的三種天然組合成分，可可脂、橄欖脂、乳木果都是萃取自神奇的大自然。由這三大主要成分研發及推出四大品牌，完整身體及髮部一系列商品，從頭到腳全方位呵護您全身肌膚。</p>
         </div>
-        <div className="col-span-1 m-2 opacity-75">
+        <div className="order-1 lg:order-2 col-span-1 m-2 opacity-75">
           <img src="/img/jake-givens-ocwmWiNAWGs-unsplash.jpg"></img>
         </div>
       </div>
 
-      <div className="m-4 grid lg:grid-cols-2">
+      <div className="m-4 flex items-center justify-center flex-wrap lg:grid lg:grid-cols-2">
         <div className="col-span-1 m-2 opacity-75">
           <img className="" src="/img/wylly-suhendra-Swk4G_xi_uM-unsplash.jpg" alt=""></img>
         </div>
@@ -46,25 +46,9 @@ export default function Index({ categories, collections, allPosts, preview }) {
         </div>
 
       </div>
-
-      {/* <Container>
-        <div className="text-center p-3 m-7">
-          <div className="font-bold text-3xl p-3"><h1>和世界一起永續發展</h1></div>
-        </div>
-        <div className="grid gap-4 lg:gap-12 lg:grid-cols-2">
-          <CardSustainability />
-          <CardSustainability />
-          <CardSustainability />
-          <CardSustainability />
-          <CardSustainability />
-          <CardSustainability />
-          <CardSustainability />
-        </div>
-      </Container> */}
-      {/* <div className="p-4">{' '}</div> */}
     </>
   )
-}
+} 
 
 // export async function getStaticProps({ preview = null }) {
 //   //const allPosts = (await getAllPostsForHome(preview)) || []
