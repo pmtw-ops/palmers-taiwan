@@ -14,7 +14,7 @@ export default function CardProduct({ product }) {
   let p_url = '/collections/' + collection + '/' + sku;
   return (
     <>
-      <div className="cursor-default rounded-lg shadow-lg border-1 bg-white overflow-hidden">
+      <div className="m-2 cursor-default shadow-lg border-1 bg-white overflow-hidden">
         <div className="relative" style={{paddingBottom: "100%"}}>
           <img className="absolute p-6 md:p-0 object-cover" src={imgUrl} alt=""></img>
         </div>
@@ -30,7 +30,6 @@ export default function CardProduct({ product }) {
           </div>
         </div>
       </div>
-      <div className="p-4">{' '}</div>
     </>
   )
 }

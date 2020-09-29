@@ -9,7 +9,7 @@ import CardProduct from '@/components/product/card-product'
 import Link from 'next/link'
 
 
-export default function Product({ product, allPosts, preview }) {
+export default function Product({ product }) {
   // const heroPost = allPosts[0]
   // const morePosts = allPosts.slice(1)
   const router = useRouter()
@@ -20,17 +20,53 @@ export default function Product({ product, allPosts, preview }) {
   }
 
   return (
-    <>
-      <img className="" src="https://placehold.it/1920x550" alt=""></img>
-      <Container>
-        <div>
-          {product.name}
-        </div>
-        <div>
-          {product.description}
-        </div>
-      </Container>
-    </>
+    <Container>
+      <div>
+        {product.name}
+      </div>
+      <div>
+        {product.name_en}
+      </div>
+      <div>
+        {product.measurement}
+      </div>
+      <div>
+        {product.origin}
+      </div>
+      <div>
+        {product.expiration}
+      </div>
+      <div>
+        {product.description}
+      </div>
+      <div>
+        {product.detail}
+      </div>
+      <div>
+        {product.feature}
+      </div>
+      <div>
+        {product.skin_type}
+      </div>
+      <div>
+        {product.uses}
+      </div>
+      <div>
+        {product.direction}
+      </div>
+      <div>
+        {product.storage}
+      </div>
+      <div>
+        {product.warning}
+      </div>
+      <div>
+        {product.metaTitle}
+      </div>
+      <div>
+        {product.metaDescription}
+      </div>
+    </Container>
   )
 }
 
@@ -44,7 +80,7 @@ export async function getStaticPaths() {
     var p = path?.product;
     var c = path?.collections[0];
     c = c?.name;
-    
+
     if (p.length > 0 && c !== undefined) {
       return {
         params: {
@@ -62,18 +98,10 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
-  let products = (await getOneProductDetails(params)) || []
-  let product = products.length > 0 ? products[0] : {}
+  let product = (await getOneProductDetails(params)) || {}
 
-  let description = await markdownToHtml(product.description)
-  description = description.split('\n')
+  console.log(product)
 
-  let productName = product?.name;
-
-  product = {
-    name: productName,
-    description: description
-  }
   // Pass post data to the page via props
   return {
     props: { product }
