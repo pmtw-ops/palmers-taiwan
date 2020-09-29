@@ -15,7 +15,7 @@ export default function Collection({ oneCollectionProducts }) {
     <>
       <img className="" src="https://placehold.it/1920x650" alt=""></img>
       <Container>
-        <div className="flex justify-center flex-wrap sm:grid text-center mt-4 gap-6 justify-items-stretch sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="flex justify-center flex-wrap sm:grid text-center m-4 gap-6 justify-items-stretch sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {products.map((product, i) => (
             <div className="w-10/12 max-w-xs w-full" key={i}>
               <CardProduct i={i} product={product} />

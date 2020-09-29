@@ -117,8 +117,8 @@ export default function NavMenuResponsive({ categories, collections }) {
 
         {/* ------------------------------------------ Dropdown Menus ------------------------------------------ */}
         <button onClick={() => toggleClose()} className={(menuAP || menuC || menuM ? " " : "hidden ") + "fixed top-0 right-0 bottom-0 left-0 h-full w-full cursor-default focus:outline-none"}></button>
-        <DropdownAllProducts menu={menuAP} categories={categories} />
-        <DropdownCollections menu={menuC} collections={collections} />
+        {/* <DropdownAllProducts menu={menuAP} categories={categories} /> */}
+        {/* <DropdownCollections menu={menuC} collections={collections} /> */}
       </div>
     </Container>
   )
