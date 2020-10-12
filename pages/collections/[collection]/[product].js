@@ -21,6 +21,11 @@ export default function Product({ product }) {
 
   return (
     <Container>
+      <div className="block md:flex">
+        <div>Images</div>
+        <div>Short Descriptions</div>
+      </div>
+      <div>Detail Block</div>
       <div>
         {product.name}
       </div>
