@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import markdownToHtml from '@/lib/markdownToHtml'
 import Head from 'next/head'
 
-import CardProduct from '@/components/product/card-product'
+import CarouselProductImages from '@/components/product/carousel-product-images'
 
 import Link from 'next/link'
 
@@ -22,7 +22,9 @@ export default function Product({ product }) {
   return (
     <Container>
       <div className="block md:flex">
-        <div>Images</div>
+        <div>
+          <CarouselProductImages images={product.images}></CarouselProductImages>
+        </div>
         <div>Short Descriptions</div>
       </div>
       <div>Detail Block</div>
