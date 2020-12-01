@@ -11,21 +11,37 @@ export default function CardProduct({ product }) {
   let name_en = product?.name_en;
   let sku = product?.sku;
 
+  console.log(product)
+
+  let c_url = '/collections/' + collection;
   let p_url = '/collections/' + collection + '/' + sku;
   return (
     <>
       <div className="m-2 cursor-default shadow-lg border-1 bg-white overflow-hidden">
-        <div className="relative" style={{paddingBottom: "100%"}}>
-          <img className="absolute p-6 md:p-0 object-cover" src={imgUrl} alt=""></img>
+        <div className="relative" style={{ paddingBottom: "114%" }}>
+          <Link href={p_url} passHref>
+            <img className="absolute p-6 cursor-pointer md:p-0 object-cover" src={imgUrl} alt=""></img>
+          </Link>
         </div>
         <div className="p-4 mt-4">
-          <Link href={p_url} passHref><h2 className="cursor-pointer text-pmbrown-500 text-sm truncate">{name}</h2></Link>
-          <div className="text-pmbrown-500 text-sm truncate">{name_en}</div>
-          <div className="text-pmbrown-500 text-sm truncate">{collection}</div>
-          <button>Learn More</button>
+          <Link href={p_url} passHref>
+            <h2 className="text-lg font-bold cursor-pointer text-pmbrown-500 truncate">{name}</h2>
+          </Link>
+          <Link href={p_url} passHref>
+            <div className="text-gray-500 mt-1 text-xs cursor-pointer truncate">{name_en}</div>
+          </Link>
+          <Link href={c_url} passHref>
+            <h3 className="text-pmbrown-400 font-bold mt-2 text-base cursor-pointer truncate">{collection}</h3>
+          </Link>
+          <Link href={p_url} passHref>
+            <button className="bg-pmbrown-200 text-white rounded-md p-1 px-2 mt-4 m-2 hover:bg-pmbrown-100">Learn More</button>
+          </Link>
 
           <div className="mt-4 flex justify-between item-baseline">
-            <div className=""><span className="text-xs">NTD$</span> {product?.price}</div>
+            <div className="">
+              <span className="text-pmbrown-700 text-xs">NTD$ </span>
+              <span className="text-pmbrown-500">{product?.price}</span>
+            </div>
             <div className=""><span className="text-pmbrown-100 text-sm">{product?.rating}</span> <span className="text-pmbrown-400 text-xs">/5</span></div>
           </div>
         </div>
