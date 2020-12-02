@@ -21,11 +21,13 @@ export default function Product({ product }) {
 
   return (
     <Container>
-      <div className="block md:flex">
-        <div>
+      <div className="block md:flex md:justify-between">
+        <div className="border-2 border-black w-full">
           <CarouselProductImages images={product.images}></CarouselProductImages>
         </div>
-        <div>Short Descriptions</div>
+        <div className="border-2 border-black w-full">
+          Short Descriptions
+        </div>
       </div>
       <div>Detail Block</div>
       <div>
