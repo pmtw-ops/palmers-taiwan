@@ -11,8 +11,6 @@ export default function CardProduct({ product }) {
   let name_en = product?.name_en;
   let sku = product?.sku;
 
-  console.log(product)
-
   let c_url = '/collections/' + collection;
   let p_url = '/collections/' + collection + '/' + sku;
   return (

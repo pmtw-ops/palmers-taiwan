@@ -5,6 +5,7 @@ import markdownToHtml from '@/lib/markdownToHtml'
 import Head from 'next/head'
 
 import CarouselProductImages from '@/components/product/carousel-product-images'
+import ProductDescriptions from '@/components/product/product-descriptions'
 
 import Link from 'next/link'
 
@@ -14,31 +15,22 @@ export default function Product({ product }) {
   // const morePosts = allPosts.slice(1)
   const router = useRouter()
 
-  console.log(product)
   if (router.isFallback) {
     return <div className="text-center text-6xl">Loading...</div>
   }
 
   return (
     <Container>
-      <div className="block md:flex md:justify-between">
-        <div className="border-2 border-black w-full">
+      <div className="block md:grid md:grid-cols-2">
+        <div className="w-full md:p-4">
           <CarouselProductImages images={product.images}></CarouselProductImages>
         </div>
-        <div className="border-2 border-black w-full">
-          Short Descriptions
+        <div className="w-full md:p-4">
+          <ProductDescriptions product={product}></ProductDescriptions>
         </div>
       </div>
       <div>Detail Block</div>
-      <div>
-        {product.name}
-      </div>
-      <div>
-        {product.name_en}
-      </div>
-      <div>
-        {product.measurement}
-      </div>
+
       <div>
         {product.origin}
       </div>
@@ -46,13 +38,10 @@ export default function Product({ product }) {
         {product.expiration}
       </div>
       <div>
-        {product.description}
+        {product.detail}aaa
       </div>
       <div>
-        {product.detail}
-      </div>
-      <div>
-        {product.feature}
+        {product.feature}...
       </div>
       <div>
         {product.skin_type}
@@ -68,12 +57,6 @@ export default function Product({ product }) {
       </div>
       <div>
         {product.warning}
-      </div>
-      <div>
-        {product.metaTitle}
-      </div>
-      <div>
-        {product.metaDescription}
       </div>
     </Container>
   )
@@ -108,8 +91,6 @@ export async function getStaticPaths() {
 // This also gets called at build time
 export async function getStaticProps({ params }) {
   let product = (await getOneProductDetails(params)) || {}
-
-  console.log(product)
 
   // Pass post data to the page via props
   return {

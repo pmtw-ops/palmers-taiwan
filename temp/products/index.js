@@ -30,7 +30,7 @@ export default function Products({ categories, collections, product, allPosts, p
 
 export async function getStaticProps({ preview = null }) {
   const allProducts = (await getAllProducts(preview)) || []
-  console.log(allProducts, '----products')
+  // console.log(allProducts, '----products')
 
   const product = {
     title: '帕瑪氏水嫩潔顏卸妝乳150g',

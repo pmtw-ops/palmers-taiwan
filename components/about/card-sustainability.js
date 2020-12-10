@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 
 export default function CardSustainability({ product, children }) {
-  console.log(product, 'ohhhh')
   return (
     <>
       <div className="h-full border-1 bg-white overflow-hidden">

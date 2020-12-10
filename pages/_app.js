@@ -31,7 +31,7 @@ class MyApp extends App {
 
 
     if (typeof cart === "string" && cart !== "undefined") {
-      console.log("foyd");
+      
       JSON.parse(cart).forEach((item) => {
         this.setState({
           cart: { items: cart, total: item.price * item.quantity },
