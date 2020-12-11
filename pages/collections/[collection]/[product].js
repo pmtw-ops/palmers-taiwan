@@ -22,10 +22,10 @@ export default function Product({ product }) {
   return (
     <Container>
       <div className="block md:grid md:grid-cols-2">
-        <div className="w-full md:p-4">
+        <div className="w-full md:p-2">
           <CarouselProductImages images={product.images}></CarouselProductImages>
         </div>
-        <div className="w-full md:p-4">
+        <div className="w-full md:p-2">
           <ProductDescriptions product={product}></ProductDescriptions>
         </div>
       </div>
