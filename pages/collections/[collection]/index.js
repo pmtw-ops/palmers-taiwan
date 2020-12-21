@@ -3,9 +3,14 @@ import { useRouter } from 'next/router'
 import CardProduct from '@/components/product/card-product'
 import Container from '@/components/container'
 
+const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+
 export default function Collection({ oneCollectionProducts }) {
   const products = oneCollectionProducts?.products;
+  const bannerImage = oneCollectionProducts?.images[0];
   const router = useRouter()
+  
+  let imgUrl = bannerImage ? CMS_URL + oneCollectionProducts.images[0].formats.thumbnail.url.replace('thumbnail_', '') : "https://placehold.it/1920x550"
 
   if (router.isFallback) {
     return <div className="text-center text-6xl">Loading...</div>
@@ -13,8 +18,8 @@ export default function Collection({ oneCollectionProducts }) {
 
   return (
     <>
-      <img className="" src="https://placehold.it/1920x650" alt=""></img>
       <Container>
+      <img className="" src={imgUrl} alt=""></img>
         <div className="flex justify-center flex-wrap sm:grid text-center m-4 gap-6 justify-items-stretch md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((product, i) => (
             <div className="w-10/12 max-w-xs w-full" key={i}>
