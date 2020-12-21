@@ -7,10 +7,10 @@ const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT
 
 export default function Collection({ oneCollectionProducts }) {
   const products = oneCollectionProducts?.products;
-  const bannerImage = oneCollectionProducts?.images[0];
+  const bannerImage = oneCollectionProducts?.featureImage[0];
   const router = useRouter()
-  
-  let imgUrl = bannerImage ? CMS_URL + oneCollectionProducts.images[0].formats.thumbnail.url.replace('thumbnail_', '') : "https://placehold.it/1920x550"
+
+  let imgUrl = bannerImage ? CMS_URL + oneCollectionProducts.featureImage[0].formats.thumbnail.url.replace('thumbnail_', '') : "https://placehold.it/1920x550"
 
   if (router.isFallback) {
     return <div className="text-center text-6xl">Loading...</div>
@@ -18,8 +18,8 @@ export default function Collection({ oneCollectionProducts }) {
 
   return (
     <>
-      <Container>
       <img className="" src={imgUrl} alt=""></img>
+      <Container>
         <div className="flex justify-center flex-wrap sm:grid text-center m-4 gap-6 justify-items-stretch md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((product, i) => (
             <div className="w-10/12 max-w-xs w-full" key={i}>
