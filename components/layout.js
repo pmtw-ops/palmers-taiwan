@@ -9,8 +9,6 @@ export default function Layout({ categories, collections, preview, children }) {
     <>
       <Meta />
       <div className="min-h-screen">
-        <Alert preview={preview} />
-        <Header />
         <Navbar categories={categories} collections={collections} />
         <main>{children}</main>
       </div>
