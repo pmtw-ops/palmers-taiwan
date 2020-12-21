@@ -44,10 +44,10 @@ export default function NavMenuResponsive({ categories, collections }) {
               </div>
               <div className="hidden md:block md:ml-6">
                 <div className="flex space-x-4">
-                  <Link href="/" passHref><a href="" className="text-pmbrown-500 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">首頁</a></Link>
-                  <Link href="/about" passHref><a href="" className="text-pmbrown-500 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">關於我們</a></Link>
-                  <Link href="/collections" passHref><a href="" className="text-pmbrown-500 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">產品系列</a></Link>
-                  <Link href="/news" passHref><a href="" className="text-pmbrown-500 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">最新消息</a></Link>
+                  <Link href="/" passHref><a href="" className="text-gray-300 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">首頁</a></Link>
+                  <Link href="/about" passHref><a href="" className="text-gray-300 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">關於我們</a></Link>
+                  <Link href="/collections" passHref><a href="" className="text-gray-300 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">產品系列</a></Link>
+                  <Link href="/news" passHref><a href="" className="text-gray-300 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">最新消息</a></Link>
                 </div>
               </div>
             </div>
@@ -80,10 +80,10 @@ export default function NavMenuResponsive({ categories, collections }) {
         {/* Mobile Menu */}
         <div className={(menuM ? "block" : "hidden") + " md:hidden"}>
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/"><a onClick={() => { toggleClose() }} className="text-pmbrown-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首頁</a></Link>
-            <Link href="/about"><a onClick={() => { toggleClose() }} className="text-pmbrown-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">關於我們</a></Link>
-            <Link href="/collections"><a onClick={() => { toggleClose() }} className="text-pmbrown-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">產品系列</a></Link>
-            <Link href="/news"><a onClick={() => { toggleClose() }} className="text-pmbrown-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">最新消息</a></Link>
+            <Link href="/"><a onClick={() => { toggleClose() }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首頁</a></Link>
+            <Link href="/about"><a onClick={() => { toggleClose() }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">關於我們</a></Link>
+            <Link href="/collections"><a onClick={() => { toggleClose() }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">產品系列</a></Link>
+            <Link href="/news"><a onClick={() => { toggleClose() }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">最新消息</a></Link>
           </div>
         </div>
       </nav>
