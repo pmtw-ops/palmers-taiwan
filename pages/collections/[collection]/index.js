@@ -10,7 +10,7 @@ export default function Collection({ oneCollectionProducts }) {
   const bannerImage = oneCollectionProducts?.featureImage[0];
   const router = useRouter()
 
-  let imgUrl = bannerImage ? CMS_URL + oneCollectionProducts.featureImage[0].formats.thumbnail.url.replace('thumbnail_', '') : "https://placehold.it/1920x550"
+  let imgUrl = bannerImage ? CMS_URL + oneCollectionProducts.featureImage[0].formats.thumbnail.url.replace('thumbnail_', '') : "https://via.placeholder.com/1920x550"
 
   if (router.isFallback) {
     return <div className="text-center text-6xl">Loading...</div>

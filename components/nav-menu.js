@@ -64,7 +64,7 @@ export default function NavMenuResponsive({ categories, collections }) {
                 <div>
                   <button onClick={() => { toggleProfile() }} className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
                     <span className="sr-only">Open user menu</span>
-                    <img className="h-8 w-8 rounded-full" src="https://placehold.it/100" alt="" />
+                    <img className="h-8 w-8 rounded-full" src="https://via.placeholder.com/100" alt="" />
                   </button>
                 </div>
                 <div className={(menuP ? "block" : "hidden") + " origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5"} role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
