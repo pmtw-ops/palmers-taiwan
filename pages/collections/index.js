@@ -10,7 +10,7 @@ const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT
 export default function Collections({ allCollections, collectionsStatic }) {
   let bannerImage = collectionsStatic.image[0];
   let bannerImageAlt = bannerImage ? collectionsStatic.image[0].alternativeText : ""
-  let imgUrl = bannerImage ? CMS_URL + collectionsStatic.image[0].formats.thumbnail.url.replace('thumbnail_', '') : "https://placehold.it/1920x550"
+  let imgUrl = bannerImage ? CMS_URL + collectionsStatic.image[0].formats.thumbnail.url.replace('thumbnail_', '') : "https://via.placeholder.com/1920x550"
 
   return (
     <>

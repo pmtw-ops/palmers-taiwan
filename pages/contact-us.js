@@ -16,7 +16,7 @@ export default function Index({ contactUs }) {
   let imgName = image?.name;
   let imgAlt = image?.alternativeText;
   let imgCaption = image?.caption;
-  let imgUrl = image ? CMS_URL + image.formats.medium.url.replace("medium_", "") : "https://placehold.it/1000x650"
+  let imgUrl = image ? CMS_URL + image.formats.medium.url.replace("medium_", "") : "https://via.placeholder.com/1000x650"
 
   return (
     <>

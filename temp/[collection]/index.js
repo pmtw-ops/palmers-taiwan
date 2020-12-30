@@ -13,7 +13,7 @@ export default function Collection({ product, allPosts, preview }) {
   // const morePosts = allPosts.slice(1)
   return (
     <>
-      <img className="" src="https://placehold.it/1920x550" alt=""></img>
+      <img className="" src="https://via.placeholder.com/1920x550" alt=""></img>
       <Container>
 
         <CardProduct></CardProduct>
@@ -34,7 +34,7 @@ export async function getStaticProps({ preview = null }) {
 
   const product = {
     title: '帕瑪氏水嫩潔顏卸妝乳150g',
-    image: 'https://placehold.it/1000x550',
+    image: 'https://via.placeholder.com/1000x550',
     shortDesc: '清潔肌膚，使肌膚淨白柔嫩',
     price: 1300,
     rating: 3.5

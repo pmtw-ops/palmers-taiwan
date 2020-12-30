@@ -17,7 +17,7 @@ export default function Index({ categories, collections, product, allPosts, prev
   // const morePosts = allPosts.slice(1)
   return (
     <>
-      <img className="" src="https://placehold.it/1920x550" alt=""></img>
+      <img className="" src="https://via.placeholder.com/1920x550" alt=""></img>
       <Container>
         <p>This is NEWS page </p>
         <div className="grid gap-4 grid-flow-row sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
