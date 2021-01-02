@@ -49,7 +49,7 @@ export default function CarouselProductImages({ images }) {
         </div>
       </div>
 
-      <div className="" >
+      <div className="">
         <img className="p-2 object-cover" src={mainImage} alt=""></img>
       </div>
 
