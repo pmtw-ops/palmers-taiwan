@@ -1,5 +1,6 @@
 import Container from '@/components/container'
 import { getHomePage } from '@/lib/api_home'
+import CardProduct from '@/components/product/card-product'
 import Head from 'next/head'
 import React, { useContext } from "react";
 import AppContext from "@/context/appcontext";
@@ -9,7 +10,7 @@ const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT
 export default function Index({ home }) {
   let bannerImage = home?.image[0]
   let imgUrl = bannerImage ? CMS_URL + home.image[0].formats.thumbnail.url.replace('thumbnail_', '') : "https://via.placeholder.com/1920x550"
-  
+
   return (
     <>
       <img className="" src={imgUrl} alt={""}></img>
@@ -18,7 +19,14 @@ export default function Index({ home }) {
         <div>Banner</div>
         <div>Hot Products</div>
         <div>News</div>
-        <div></div>
+        <div className="text-pmbrown-700 mt-24 text-2xl">其他展品推薦</div>
+        <hr className="border-accent-2 mt-2 mb-4" />
+        <div className="flex justify-center flex-wrap sm:grid text-center m-4 gap-6 justify-items-stretch md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <CardProduct />
+          <CardProduct />
+          <CardProduct />
+          <CardProduct />
+        </div>
       </Container>
     </>
   )
@@ -26,7 +34,7 @@ export default function Index({ home }) {
 
 export async function getStaticProps({ preview = null }) {
   const home = (await getHomePage(preview)) || []
-  
+
   return {
     props: { home }
   }
