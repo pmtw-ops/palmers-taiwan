@@ -2,7 +2,7 @@ import Container from '@/components/container'
 import { getAllProductPaths } from '@/lib/api_collections'
 import { getOneProductDetails, getRelatedProduct } from '@/lib/api_products'
 import { useRouter } from 'next/router'
-import CardProduct from '@/components/product/card-product'
+import CardRelatedProduct from '@/components/product/card-related-product'
 import SectionSeparator from '@/components/section-separator'
 import markdownToHtml from '@/lib/markdownToHtml'
 import Head from 'next/head'
@@ -66,11 +66,16 @@ export default function Product({ product }) {
 
       <div className="text-pmbrown-700 mt-24 text-2xl">其他展品推薦</div>
       <hr className="border-accent-2 mt-2 mb-4" />
-      <div className="flex justify-center flex-wrap sm:grid text-center m-4 gap-6 justify-items-stretch md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
+      <div className="flex overflow-x-scroll -mx-2 my-4">
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
       </div>
     </Container>
   )
