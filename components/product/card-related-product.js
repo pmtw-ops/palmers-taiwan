@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
 
-export default function CardProduct({ product }) {
+export default function CardRelatedProduct({ product }) {
   let images = product?.images[0];
   let imgUrl = images ? CMS_URL + images.formats.medium.url.replace("", "") : "https://via.placeholder.com/550x550"
 
@@ -15,7 +15,7 @@ export default function CardProduct({ product }) {
   let p_url = '/collections/' + collection + '/' + sku;
   return (
     <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 my-3 px-3">
-      <div class="relative shadow-lg bg-white">
+      <div class="relative w-72 shadow-lg bg-white">
         <picture class="block bg-gray-200">
           <Link href={p_url} passHref>
             <img className="block" src={imgUrl} alt=""></img>
@@ -44,6 +44,7 @@ export default function CardProduct({ product }) {
         </div>
       </div>
     </div>
+
   )
 }
 

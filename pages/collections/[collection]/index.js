@@ -20,11 +20,9 @@ export default function Collection({ oneCollectionProducts }) {
     <>
       <img className="" src={imgUrl} alt=""></img>
       <Container>
-        <div className="flex justify-center flex-wrap sm:grid text-center m-4 gap-6 justify-items-stretch md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="flex flex-row flex-wrap -mx-2 my-4">
           {products.map((product, i) => (
-            <div className="w-10/12 max-w-xs w-full" key={i}>
-              <CardProduct i={i} product={product} />
-            </div>
+            <CardProduct i={i} product={product} />
           ))}
         </div>
       </Container>

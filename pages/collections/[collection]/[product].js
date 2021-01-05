@@ -1,6 +1,8 @@
 import Container from '@/components/container'
-import { getAllProductPaths, getOneProductDetails } from '@/lib/api_collections'
+import { getAllProductPaths } from '@/lib/api_collections'
+import { getOneProductDetails, getRelatedProduct } from '@/lib/api_products'
 import { useRouter } from 'next/router'
+import CardRelatedProduct from '@/components/product/card-related-product'
 import SectionSeparator from '@/components/section-separator'
 import markdownToHtml from '@/lib/markdownToHtml'
 import Head from 'next/head'
@@ -64,6 +66,17 @@ export default function Product({ product }) {
 
       <div className="text-pmbrown-700 mt-24 text-2xl">其他展品推薦</div>
       <hr className="border-accent-2 mt-2 mb-4" />
+      <div className="flex overflow-x-scroll -mx-2 my-4">
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+        <CardRelatedProduct />
+      </div>
     </Container>
   )
 }
@@ -97,9 +110,10 @@ export async function getStaticPaths() {
 // This also gets called at build time
 export async function getStaticProps({ params }) {
   let product = (await getOneProductDetails(params)) || {}
+  let relatedProduct = (await getRelatedProduct(params)) || {}
 
   // Pass post data to the page via props
   return {
-    props: { product }
+    props: { product, relatedProduct }
   }
 }
