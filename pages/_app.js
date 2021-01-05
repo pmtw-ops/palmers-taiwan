@@ -142,14 +142,8 @@ class MyApp extends App {
         }}
       >
         <Head>
-          <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossOrigin="anonymous"
-          />
         </Head>
-        <Layout categories={pageProps.categories} collections={pageProps.collections}>
+        <Layout>
           <Component {...pageProps} />
         </Layout>
       </AppContext.Provider>
@@ -157,19 +151,10 @@ class MyApp extends App {
   }
 }
 
-// Placeholder Test Data
-const categoriesTestData = ['Cat1', 'Cat2', 'Cat3', 'Cat4', 'Cat5'];
-const collectionsTestData = ['Col1', 'Col2', 'Col3', 'Col4', 'Col5',];
-
 // Pass Navbar datas ...
 MyApp.getStaticProps = async (appContext) => {
   // calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getStaticProps(appContext);
-
-  appProps.pageProps['categories'] = categoriesTestData;
-  appProps.pageProps['collections'] = collectionsTestData;
-
-  // console.log(appContext)
 
   return { ...appProps }
 }

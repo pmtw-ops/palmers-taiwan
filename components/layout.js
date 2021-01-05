@@ -4,12 +4,12 @@ import Meta from './meta'
 import Header from './header'
 import Navbar from './navbar'
 
-export default function Layout({ categories, collections, preview, children }) {
+export default function Layout({ children }) {
   return (
     <>
       <Meta />
       <div className="min-h-screen">
-        <Navbar categories={categories} collections={collections} />
+        <Navbar />
         <main>{children}</main>
       </div>
       <Footer />
