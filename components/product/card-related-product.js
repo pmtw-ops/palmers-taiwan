@@ -16,7 +16,7 @@ export default function CardRelatedProduct({ product }) {
   return (
     <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 my-3 px-3">
       <div class="relative w-72 shadow-lg bg-white">
-        <picture class="block bg-gray-200">
+        <picture class="block cursor-pointer bg-gray-200">
           <Link href={p_url} passHref>
             <img className="block" src={imgUrl} alt=""></img>
           </Link>

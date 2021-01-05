@@ -22,7 +22,7 @@ export default function Collection({ oneCollectionProducts }) {
       <Container>
         <div className="flex flex-row flex-wrap -mx-2 my-4">
           {products.map((product, i) => (
-            <CardProduct i={i} product={product} />
+            <CardProduct key={i} i={i} product={product} />
           ))}
         </div>
       </Container>
