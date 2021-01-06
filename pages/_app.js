@@ -131,7 +131,6 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     const appData = pageProps.appData
-    console.log(appData, '------------')
     return (
       <AppContext.Provider
         value={{
@@ -146,7 +145,7 @@ class MyApp extends App {
         <Head>
           <title>{appData?.title}</title>
         </Head>
-        <Layout>
+        <Layout appData={appData}>
           <Component {...pageProps} />
         </Layout>
       </AppContext.Provider>

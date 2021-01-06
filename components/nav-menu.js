@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Container from '@/components/container'
 import { useState } from 'react'
 
+const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+
 export default function NavMenuResponsive({ appData }) {
   let [menuP, setMenuProfile] = useState(false);
   let [menuM, setMenuMobile] = useState(false);
@@ -19,6 +21,7 @@ export default function NavMenuResponsive({ appData }) {
     setMenuProfile(false);
     setMenuMobile(false);
   }
+
   return (
     <Container>
       <nav className="relative z-10">
@@ -40,10 +43,10 @@ export default function NavMenuResponsive({ appData }) {
             {/* --- Main Menu --- */}
             <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
               <div className="flex-shrink-0 flex items-center">
-                <img className="block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
+                <img className="block rounded-lg h-20 w-auto" src={CMS_URL +'/'+ appData.logo[0].url} alt={appData.logo[0].alternativeText} />
               </div>
               <div className="hidden md:block md:ml-6">
-                <div className="flex space-x-4">
+                <div className="flex mt-4 space-x-4">
                   <Link href="/" passHref><a href="" className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md text-sm font-medium">首頁</a></Link>
                   <Link href="/about" passHref><a href="" className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md text-sm font-medium">關於我們</a></Link>
                   <Link href="/collections" passHref><a href="" className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md text-sm font-medium">產品系列</a></Link>
