@@ -4,15 +4,15 @@ import Meta from './meta'
 import Header from './header'
 import Navbar from './navbar'
 
-export default function Layout({ categories, collections, preview, children }) {
+export default function Layout({ children, appData }) {
   return (
     <>
       <Meta />
       <div className="min-h-screen">
-        <Navbar categories={categories} collections={collections} />
+        <Navbar appData={appData} />
         <main>{children}</main>
       </div>
-      <Footer />
+      <Footer appData={appData} />
     </>
   )
 }
