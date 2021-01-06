@@ -19,6 +19,8 @@ export default function Index({ home }) {
         <div>Banner</div>
         <div>Hot Products</div>
         <div>News</div>
+        <div className="text-pmbrown-700 mt-24 text-2xl">最新消息</div>
+        <hr className="border-accent-2 mt-2 mb-4" />
         <div className="text-pmbrown-700 mt-24 text-2xl">其他展品推薦</div>
         <hr className="border-accent-2 mt-2 mb-4" />
         <div className="flex overflow-x-scroll -mx-2 my-4">
