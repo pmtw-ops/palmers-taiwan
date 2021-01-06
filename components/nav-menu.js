@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Container from '@/components/container'
 import { useState } from 'react'
 
-export default function NavMenuResponsive({ categories, collections }) {
+export default function NavMenuResponsive({ appData }) {
   let [menuP, setMenuProfile] = useState(false);
   let [menuM, setMenuMobile] = useState(false);
 

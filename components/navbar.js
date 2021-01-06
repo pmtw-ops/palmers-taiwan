@@ -1,10 +1,10 @@
 import Container from './container'
 import NavMenu from './nav-menu'
 
-export default function Navbar({ categories, collections }) {
+export default function Navbar({ appData }) {
   return (
     <div className="bg-gray-300 p-2">
-      <NavMenu categories={categories} collections={collections} />
+      <NavMenu appData={appData} />
     </div>
   )
 }

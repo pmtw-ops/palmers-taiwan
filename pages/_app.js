@@ -15,6 +15,7 @@ import Cookie from "js-cookie";
 import fetch from "isomorphic-fetch";
 import AppContext from "@/context/appcontext";
 import Layout from '@/components/layout';
+import { getAppData } from '@/lib/api_app'
 
 class MyApp extends App {
   state = {
@@ -31,7 +32,7 @@ class MyApp extends App {
 
 
     if (typeof cart === "string" && cart !== "undefined") {
-      
+
       JSON.parse(cart).forEach((item) => {
         this.setState({
           cart: { items: cart, total: item.price * item.quantity },
@@ -129,7 +130,8 @@ class MyApp extends App {
   };
   render() {
     const { Component, pageProps } = this.props;
-
+    const appData = pageProps.appData
+    console.log(appData, '------------')
     return (
       <AppContext.Provider
         value={{
@@ -142,6 +144,7 @@ class MyApp extends App {
         }}
       >
         <Head>
+          <title>{appData?.title}</title>
         </Head>
         <Layout>
           <Component {...pageProps} />
@@ -152,9 +155,12 @@ class MyApp extends App {
 }
 
 // Pass Navbar datas ...
-MyApp.getStaticProps = async (appContext) => {
+MyApp.getInitialProps = async (appContext) => {
   // calls page's `getInitialProps` and fills `appProps.pageProps`
-  const appProps = await App.getStaticProps(appContext);
+  const appProps = await App.getInitialProps(appContext);
+  const appData = (await getAppData()) || []
+
+  appProps.pageProps['appData'] = appData;
 
   return { ...appProps }
 }
