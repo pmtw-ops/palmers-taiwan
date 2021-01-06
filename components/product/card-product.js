@@ -14,9 +14,9 @@ export default function CardProduct({ product }) {
   let c_url = '/collections/' + collection;
   let p_url = '/collections/' + collection + '/' + sku;
   return (
-    <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 my-3 px-3">
-      <div class="relative shadow-lg bg-white">
-        <picture class="block bg-gray-200">
+    <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 my-3 px-3">
+      <div className="relative shadow-lg bg-white">
+        <picture className="block cursor-pointer bg-gray-200">
           <Link href={p_url} passHref>
             <img className="block" src={imgUrl} alt=""></img>
           </Link>

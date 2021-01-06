@@ -3,6 +3,10 @@ import Link from 'next/link'
 const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
 
 export default function ProductDescriptions({ product }) {
+  let collection = product?.collections[0].name;
+  let sku = product?.sku;
+
+  let w_url = '/collections/' + collection + '/' + sku + '/where-to-buy';
   return (
     <div className="flex-wrap">
       <div className="text-pmbrown-800 font-bold text-5xl p-2 mt-2">{product.name}</div>
@@ -17,7 +21,9 @@ export default function ProductDescriptions({ product }) {
         <span>售價:</span>
         <span className="p-2">NTD$: {product.price}</span>
       </div>
-      <button className="bg-pmbrown-300 text-gray-100 rounded-md p-2 m-2 mt-4 cursor-pointer hover:bg-pmbrown-100 lg:mt-10">哪裡購買</button>
+      <Link href={w_url} passHref>
+        <button className="bg-pmbrown-300 text-gray-100 rounded-md p-2 m-2 mt-4 cursor-pointer hover:bg-pmbrown-100 lg:mt-10">哪裡購買</button>
+      </Link>
     </div>
   )
 }

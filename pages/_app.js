@@ -15,6 +15,7 @@ import Cookie from "js-cookie";
 import fetch from "isomorphic-fetch";
 import AppContext from "@/context/appcontext";
 import Layout from '@/components/layout';
+import { getAppData } from '@/lib/api_app'
 
 class MyApp extends App {
   state = {
@@ -31,7 +32,7 @@ class MyApp extends App {
 
 
     if (typeof cart === "string" && cart !== "undefined") {
-      
+
       JSON.parse(cart).forEach((item) => {
         this.setState({
           cart: { items: cart, total: item.price * item.quantity },
@@ -129,7 +130,7 @@ class MyApp extends App {
   };
   render() {
     const { Component, pageProps } = this.props;
-
+    const appData = pageProps.appData
     return (
       <AppContext.Provider
         value={{
@@ -142,14 +143,9 @@ class MyApp extends App {
         }}
       >
         <Head>
-          <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossOrigin="anonymous"
-          />
+          <title>{appData?.title}</title>
         </Head>
-        <Layout categories={pageProps.categories} collections={pageProps.collections}>
+        <Layout appData={appData}>
           <Component {...pageProps} />
         </Layout>
       </AppContext.Provider>
@@ -157,19 +153,13 @@ class MyApp extends App {
   }
 }
 
-// Placeholder Test Data
-const categoriesTestData = ['Cat1', 'Cat2', 'Cat3', 'Cat4', 'Cat5'];
-const collectionsTestData = ['Col1', 'Col2', 'Col3', 'Col4', 'Col5',];
-
 // Pass Navbar datas ...
-MyApp.getStaticProps = async (appContext) => {
+MyApp.getInitialProps = async (appContext) => {
   // calls page's `getInitialProps` and fills `appProps.pageProps`
-  const appProps = await App.getStaticProps(appContext);
+  const appProps = await App.getInitialProps(appContext);
+  const appData = (await getAppData()) || []
 
-  appProps.pageProps['categories'] = categoriesTestData;
-  appProps.pageProps['collections'] = collectionsTestData;
-
-  // console.log(appContext)
+  appProps.pageProps['appData'] = appData;
 
   return { ...appProps }
 }

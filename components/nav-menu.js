@@ -2,7 +2,9 @@ import Link from 'next/link'
 import Container from '@/components/container'
 import { useState } from 'react'
 
-export default function NavMenuResponsive({ categories, collections }) {
+const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+
+export default function NavMenuResponsive({ appData }) {
   let [menuP, setMenuProfile] = useState(false);
   let [menuM, setMenuMobile] = useState(false);
 
@@ -19,9 +21,10 @@ export default function NavMenuResponsive({ categories, collections }) {
     setMenuProfile(false);
     setMenuMobile(false);
   }
+
   return (
     <Container>
-      <nav className="">
+      <nav className="relative z-10">
         <div className="max-w-7xl mx-auto px-2 md:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
             <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -40,14 +43,14 @@ export default function NavMenuResponsive({ categories, collections }) {
             {/* --- Main Menu --- */}
             <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
               <div className="flex-shrink-0 flex items-center">
-                <img className="block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
+                <img className="block rounded-lg h-20 w-auto" src={CMS_URL +'/'+ appData.logo[0].url} alt={appData.logo[0].alternativeText} />
               </div>
               <div className="hidden md:block md:ml-6">
-                <div className="flex space-x-4">
-                  <Link href="/" passHref><a href="" className="text-gray-300 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">首頁</a></Link>
-                  <Link href="/about" passHref><a href="" className="text-gray-300 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">關於我們</a></Link>
-                  <Link href="/collections" passHref><a href="" className="text-gray-300 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">產品系列</a></Link>
-                  <Link href="/news" passHref><a href="" className="text-gray-300 text-lg hover:bg-gray-600 hover:text-gray-100 px-3 py-2 rounded-md text-sm font-medium">最新消息</a></Link>
+                <div className="flex mt-4 space-x-4">
+                  <Link href="/" passHref><a href="" className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md text-sm font-medium">首頁</a></Link>
+                  <Link href="/about" passHref><a href="" className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md text-sm font-medium">關於我們</a></Link>
+                  <Link href="/collections" passHref><a href="" className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md text-sm font-medium">產品系列</a></Link>
+                  <Link href="/news" passHref><a href="" className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md text-sm font-medium">最新消息</a></Link>
                 </div>
               </div>
             </div>
@@ -68,9 +71,9 @@ export default function NavMenuResponsive({ categories, collections }) {
                   </button>
                 </div>
                 <div className={(menuP ? "block" : "hidden") + " origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5"} role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">我的帳戶</a>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">設定</a>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">登出</a>
+                  <a href="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">我的帳戶</a>
+                  <a href="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">設定</a>
+                  <a href="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">登出</a>
                 </div>
               </div>
             </div>
@@ -80,16 +83,16 @@ export default function NavMenuResponsive({ categories, collections }) {
         {/* Mobile Menu */}
         <div className={(menuM ? "block" : "hidden") + " md:hidden"}>
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/"><a onClick={() => { toggleClose() }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首頁</a></Link>
-            <Link href="/about"><a onClick={() => { toggleClose() }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">關於我們</a></Link>
-            <Link href="/collections"><a onClick={() => { toggleClose() }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">產品系列</a></Link>
-            <Link href="/news"><a onClick={() => { toggleClose() }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">最新消息</a></Link>
+            <Link href="/"><a onClick={() => { toggleClose() }} className="text-pmbrown-200 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首頁</a></Link>
+            <Link href="/about"><a onClick={() => { toggleClose() }} className="text-pmbrown-200 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">關於我們</a></Link>
+            <Link href="/collections"><a onClick={() => { toggleClose() }} className="text-pmbrown-200 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">產品系列</a></Link>
+            <Link href="/news"><a onClick={() => { toggleClose() }} className="text-pmbrown-200 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">最新消息</a></Link>
           </div>
         </div>
       </nav>
 
       {/* --- Close All Menu --- */}
-      <button onClick={() => toggleClose()} className={(menuP ? " " : "hidden ") + "fixed top-0 right-0 bottom-0 left-0 h-full w-full cursor-default focus:outline-none"}></button>
+      <button onClick={() => toggleClose()} className={((menuP || menuM) ? " " : "hidden ") + "fixed top-0 right-0 bottom-0 left-0 h-full w-full cursor-default focus:outline-none"}></button>
     </Container>
   )
 }

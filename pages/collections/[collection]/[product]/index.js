@@ -33,12 +33,12 @@ export default function Product({ product }) {
         </div>
       </div>
       <div className="p-4 m-4"></div>
-      <div className="text-pmbrown-700 text-2xl">產品特點</div>
+      <div className="text-pmbrown-700 font-bold text-2xl">產品特點</div>
       <hr className="border-accent-2 mt-2 mb-4" />
       <div className="p-2 mb-4">
         {product.feature}...
       </div>
-      <div className="text-pmbrown-700 text-2xl">使用方法</div>
+      <div className="text-pmbrown-700 font-bold text-2xl">使用方法</div>
       <hr className="border-accent-2 mt-2 mb-4" />
       <div className="p-2">
         {product.uses}
@@ -58,13 +58,13 @@ export default function Product({ product }) {
       <div className="p-2 mb-4">
         {product.storage}
       </div>
-      <div className="text-pmbrown-700 text-2xl">注意事項</div>
+      <div className="text-pmbrown-700 font-bold text-2xl">注意事項</div>
       <hr className="border-accent-2 mt-2 mb-4" />
       <div className="p-2 mb-4">
         {product.warning}
       </div>
 
-      <div className="text-pmbrown-700 mt-24 text-2xl">其他展品推薦</div>
+      <div className="text-pmbrown-700 mt-24 font-bold text-2xl">其他展品推薦</div>
       <hr className="border-accent-2 mt-2 mb-4" />
       <div className="flex overflow-x-scroll -mx-2 my-4">
         <CardRelatedProduct />
