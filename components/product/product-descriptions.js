@@ -3,8 +3,10 @@ import Link from 'next/link'
 const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
 
 export default function ProductDescriptions({ product }) {
-  let collection = product?.collections[0].name;
+  let collection = product;
   let sku = product?.sku;
+
+  console.log(product)
 
   let w_url = '/collections/' + collection + '/' + sku + '/where-to-buy';
   return (

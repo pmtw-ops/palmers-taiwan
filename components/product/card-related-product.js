@@ -40,6 +40,9 @@ export default function CardRelatedProduct({ product }) {
               <span className="text-pmbrown-700 text-xs">NTD$ </span>
               <span className="text-pmbrown-500">{product?.price}</span>
             </div>
+            <div className="flex">
+              <CardRelatedProduct rating={product.rating}/><span className="text-sm ml-2"> 31 reviews</span>
+            </div>
           </div>
         </div>
       </div>
