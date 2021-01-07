@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import CardRelatedProduct from '@/components/product/review-stars'
+import ReviewStars from '@/components/product/review-stars'
 
 const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
 
@@ -42,7 +42,7 @@ export default function CardProduct({ product }) {
               <span className="text-pmbrown-500">{product?.price}</span>
             </div>
             <div className="flex">
-              <CardRelatedProduct rating={product.rating}/><span className="text-sm ml-2"> 31 reviews</span>
+              <ReviewStars rating={product?.rating} /><span className="text-sm ml-2"> {product?.review} 評分</span>
             </div>
           </div>
         </div>
