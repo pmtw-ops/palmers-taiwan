@@ -10,6 +10,7 @@
       "@/components/home/*": ["components/home/*"],
       "@/components/legal/*": ["components/legal/*"],
       "@/components/product/*": ["components/product/*"],
+      "@/components/news/*": ["components/news/*"],
       "@/lib/*": ["lib/*"],
       "@/styles/*": ["styles/*"],
       "@/context/*": ["context/*"]
