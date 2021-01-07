@@ -1,9 +1,10 @@
 import Link from 'next/link'
+import ReviewStars from '@/components/product/review-stars'
 
 const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
 
 export default function ProductDescriptions({ product }) {
-  let collection = product?.collections[0].name;
+  let collection = product;
   let sku = product?.sku;
 
   let w_url = '/collections/' + collection + '/' + sku + '/where-to-buy';
@@ -18,12 +19,17 @@ export default function ProductDescriptions({ product }) {
         <span className="">{product.measurement}</span>
       </div>
       <div className="p-2">
-        <span>售價:</span>
-        <span className="p-2">NTD$: {product.price}</span>
+        <span>售價: </span>
+        <span className="p-2">{product.price} NTD</span>
       </div>
-      <Link href={w_url} passHref>
-        <button className="bg-pmbrown-300 text-gray-100 rounded-md p-2 m-2 mt-4 cursor-pointer hover:bg-pmbrown-100 lg:mt-10">哪裡購買</button>
-      </Link>
+      <div className="flex p-2">
+        <ReviewStars rating={product?.rating} /><span className="text-sm ml-2"> {product?.review} 評分</span>
+      </div>
+      <div className="p-2">
+        <Link href={w_url} passHref>
+          <button className="bg-pmbrown-300 text-gray-100 rounded-md p-2 m-2 mt-4 cursor-pointer hover:bg-pmbrown-100 lg:mt-10">哪裡購買</button>
+        </Link>
+      </div>
     </div>
   )
 }
