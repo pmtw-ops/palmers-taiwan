@@ -77,6 +77,8 @@ export default function Product({ product }) {
         <CardRelatedProduct />
         <CardRelatedProduct />
       </div>
+      <div className="text-pmbrown-700 mt-24 font-bold text-2xl">產品評價</div>
+      <hr className="border-accent-2 mt-2 mb-4" />
     </Container>
   )
 }
