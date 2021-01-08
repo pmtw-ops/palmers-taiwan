@@ -45,7 +45,9 @@ export default function NavMenuResponsive({ appData }) {
             {/* --- Main Menu --- */}
             <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
               <div className="flex-shrink-0 flex items-center">
-                <img className="block rounded-lg h-20 w-auto" src={logoUrl} alt={logoAlt} />
+                <Link href="/" passHref>
+                  <img className="block rounded-lg h-20 w-auto" src={logoUrl} alt={logoAlt} />
+                </Link>
               </div>
               <div className="hidden md:block md:ml-6">
                 <div className="flex mt-4 space-x-4">
