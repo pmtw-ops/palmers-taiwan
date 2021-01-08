@@ -4,7 +4,7 @@ import ReviewStars from '@/components/product/review-stars'
 const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
 
 export default function ProductDescriptions({ product }) {
-  let collection = product;
+  let collection = product?.collections[0].name;
   let sku = product?.sku;
 
   let w_url = '/collections/' + collection + '/' + sku + '/where-to-buy';
