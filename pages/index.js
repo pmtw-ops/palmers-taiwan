@@ -10,7 +10,7 @@ const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT
 
 export default function Index({ home }) {
   let bannerImage = home?.image[0]
-  let imgUrl = bannerImage ? CMS_URL + home.image[0].formats.thumbnail.url.replace('thumbnail_', '') : "https://via.placeholder.com/1920x550"
+  let imgUrl = bannerImage ? CMS_URL + home.image[0].url : "https://via.placeholder.com/1920x550"
 
   return (
     <>
