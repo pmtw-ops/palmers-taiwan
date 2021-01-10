@@ -31,7 +31,7 @@ export default function CarouselProductImages({ images }) {
 
   return (
     <div className="block lg:p-0 lg:flex lg:justify-around">
-      <div className="hidden lg:inline-grid lg:gap-2 lg:p-2 lg:grid-col-1">
+      {/* <div className="hidden lg:inline-grid lg:gap-2 lg:p-2 lg:grid-col-1">
         <div className="">
           <img className="border" src="https://via.placeholder.com/80x80"></img>
         </div>
@@ -47,13 +47,13 @@ export default function CarouselProductImages({ images }) {
         <div className="">
           <img className="border opacity-50" src="https://via.placeholder.com/80/FFFFFF/FFFFFF"></img>
         </div>
-      </div>
+      </div> */}
 
       <div className="md:max-w-sm lg:max-w-xl">
-        <img className="p-2 object-cover" src={mainImage} alt=""></img>
+        <img className="p-4 object-cover" src={mainImage} alt=""></img>
       </div>
 
-      <div className="mt-2 mb-2 lg:hidden">
+      {/* <div className="mt-2 mb-2 lg:hidden">
         <div className="flex justify-around">
           <div className="p-2">
             <img className="border" src="https://via.placeholder.com/80/FFFFFF/FFFFFF"></img>
@@ -71,7 +71,7 @@ export default function CarouselProductImages({ images }) {
             <img className="border" src="https://via.placeholder.com/80/FFFFFF/FFFFFF"></img>
           </div>
         </div>
-      </div>
+      </div> */}
     </div >
   )
 }
