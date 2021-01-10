@@ -3,6 +3,7 @@ import { getAllProductPaths } from '@/lib/api_collections'
 import { getOneProductDetails, getRelatedProduct } from '@/lib/api_products'
 import { useRouter } from 'next/router'
 import CardRelatedProduct from '@/components/product/card-related-product'
+import ProductReview from '@/components/product/product-review'
 import SectionSeparator from '@/components/section-separator'
 import markdownToHtml from '@/lib/markdownToHtml'
 import Head from 'next/head'
@@ -79,6 +80,7 @@ export default function Product({ product }) {
       </div>
       <div className="text-pmbrown-700 mt-24 font-bold text-2xl">產品評價</div>
       <hr className="border-accent-2 mt-2 mb-4" />
+      <ProductReview />
     </Container>
   )
 }
