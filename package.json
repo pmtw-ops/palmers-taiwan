@@ -1,6 +1,6 @@
 {
-  "name": "cms-strapi",
-  "version": "1.0.0",
+  "name": "palmers-taiwan",
+  "version": "0.1.1",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "next",
