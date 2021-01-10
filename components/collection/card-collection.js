@@ -5,7 +5,7 @@ const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT
 
 export default function CardCollection({ i, collection }) {
   let image = collection.images ? collection.images[0] : undefined
-  let imgUrl = image ? CMS_URL + image.formats.medium.url.replace("medium_", "") : "https://via.placeholder.com/1000x550"
+  let imgUrl = image ? CMS_URL + image.url : "https://via.placeholder.com/1000x550"
   let imgAlt = image ? image.alternativeText : "temp"
   let collectionPath = '/collections/' + collection.name
 
