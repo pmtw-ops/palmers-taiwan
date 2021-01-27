@@ -1,44 +1,52 @@
-
-import Layout from '@/components/layout'
+import { getAllNewsPosts } from '@/lib/api_news'
+import { useRouter } from 'next/router'
 import Container from '@/components/container'
-import { getAllPostsForHome } from '@/lib/api_products'
-import NewsPost from '@/components/news/news-post'
-import Head from 'next/head'
-import { CMS_NAME } from '@/lib/constants'
 
-import CardProduct from '@/components/product/card-product'
+const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
 
-import Link from 'next/link'
+export default function index({ }) {
+  const router = useRouter()
 
-const NEXT_PUBLIC_STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL
+  let imgUrl = "https://via.placeholder.com/1920x550"
 
+  if (router.isFallback) {
+    return <div className="text-center text-6xl">Loading...</div>
+  }
 
-export default function Index({ categories, collections, product, allPosts, preview }) {
-  // const heroPost = allPosts[0]
-  // const morePosts = allPosts.slice(1)
   return (
     <>
-      <img className="" src="https://via.placeholder.com/1920x550" alt=""></img>
+      <img className="" src={imgUrl} alt=""></img>
       <Container>
-     
+        <div className="flex flex-row flex-wrap -mx-2 my-4">
+        </div>
       </Container>
     </>
   )
 }
 
-export async function getStaticProps({ preview = null }) {
-  //const allPosts = (await getAllPostsForHome(preview)) || []
-  // console.log(allPosts)
+// This function gets called at build time
+export async function getStaticPaths() {
+  // Call an external API endpoint to get collections
+  const allNewsPosts = (await getAllNewsPosts()) || []
 
-  const product = {
-    title: '帕瑪氏水嫩潔顏卸妝乳150g',
-    image: 'https://images.unsplash.com/photo-1493925410384-84f842e616fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    shortDesc: '清潔肌膚，使肌膚淨白柔嫩',
-    price: 1300,
-    rating: 3.5
-  }
+  console.log(allNewsPosts)
 
+  // Get the paths we want to pre-render based on collections
+  const paths = allNewsPosts.map((post) => ({
+    params: { posts: post.title },
+  }))
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: true }
+}
+
+// This also gets called at build time
+export async function getStaticProps({ params }) {
+  // const oneCollectionProducts = (await getOneCollectionProducts(params.collection)) || []
+
+  // Pass post data to the page via props
   return {
-    props: { product } //allPosts, preview },
+    props: { }
   }
 }
