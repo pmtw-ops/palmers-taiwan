@@ -2,6 +2,7 @@
 import Layout from '@/components/layout'
 import Container from '@/components/container'
 import { getAllPostsForHome } from '@/lib/api_products'
+import NewsPost from '@/components/news/news-post'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 
@@ -19,7 +20,20 @@ export default function Index({ categories, collections, product, allPosts, prev
     <>
       <img className="" src="https://via.placeholder.com/1920x550" alt=""></img>
       <Container>
-        <p className="text-center text-6xl">This is NEWS page. I'm still under development. </p>
+        <div class="grid grid-cols-1 gap-4">
+          <NewsPost />
+          <NewsPost />
+          <NewsPost />
+          <NewsPost />
+          <NewsPost />
+          <NewsPost />
+          <NewsPost />
+          <NewsPost />
+          <NewsPost />
+          <NewsPost />
+          <NewsPost />
+          <NewsPost />
+        </div>
       </Container>
     </>
   )

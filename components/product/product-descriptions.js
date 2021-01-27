@@ -18,16 +18,16 @@ export default function ProductDescriptions({ product }) {
         <span className="">產品容量: </span>
         <span className="">{product.measurement}</span>
       </div>
-      <div className="p-2">
+      <div className="p-2 mt-2">
         <span>售價: </span>
         <span className="p-2">{product.price} NTD</span>
       </div>
       <div className="flex p-2">
-        <ReviewStars rating={product?.rating} /><span className="text-sm ml-2"> {product?.review} 評分</span>
+        <ReviewStars rating={product?.rating} /><span className="text-sm px-2"> {product?.review} 評分</span>
       </div>
-      <div className="p-2">
+      <div className="px-2">
         <Link href={w_url} passHref>
-          <button className="bg-pmbrown-300 text-gray-100 rounded-md p-2 m-2 mt-4 cursor-pointer hover:bg-pmbrown-100 lg:mt-10">哪裡購買</button>
+          <button className="bg-pmbrown-300 text-gray-100 rounded-md p-2 m-2 cursor-pointer hover:bg-pmbrown-100 lg:mt-10">哪裡購買</button>
         </Link>
       </div>
     </div>

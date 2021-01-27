@@ -16,10 +16,6 @@ export default function Index({ home }) {
     <>
       <img className="" src={imgUrl} alt={""}></img>
       <Container>
-        <div>{home.title}</div>
-        <div>Banner</div>
-        <div>Hot Products</div>
-        <div>News</div>
         <div className="text-pmbrown-700 mt-24 text-2xl">最新消息</div>
         <hr className="border-accent-2 mt-2 mb-4" />
         <div className="flex flex-row flex-wrap -mx-2 my-4">
