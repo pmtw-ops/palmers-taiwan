@@ -7,7 +7,7 @@ export default function ProductDescriptions({ product }) {
   let collection = product?.collections[0].name;
   let sku = product?.sku;
 
-  let w_url = '/collections/' + collection + '/' + sku + '/where-to-buy';
+  let w_url = '/where-to-buy' //'/collections/' + collection + '/' + sku + '/where-to-buy';
   return (
     <div className="flex-wrap">
       <div className="text-pmbrown-800 font-bold text-5xl p-2 mt-2">{product.name}</div>
