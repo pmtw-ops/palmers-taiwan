@@ -18,6 +18,7 @@ export default function Product({ product }) {
   // const heroPost = allPosts[0]
   // const morePosts = allPosts.slice(1)
   const router = useRouter()
+  let product_suggestions = product?.product_suggestions;
 
   if (router.isFallback) {
     return <div className="text-center text-6xl">Loading...</div>
@@ -37,7 +38,7 @@ export default function Product({ product }) {
       <div className="text-pmbrown-700 font-bold text-2xl">產品特點</div>
       <hr className="border-accent-2 mt-2 mb-4" />
       <div className="p-2 mb-4">
-        {product.feature}...
+        {product.feature}
       </div>
       <div className="text-pmbrown-700 font-bold text-2xl">使用方法</div>
       <hr className="border-accent-2 mt-2 mb-4" />
@@ -64,19 +65,15 @@ export default function Product({ product }) {
       <div className="p-2 mb-4">
         {product.warning}
       </div>
-
+      
       <div className="text-pmbrown-700 mt-24 font-bold text-2xl">其他展品推薦</div>
       <hr className="border-accent-2 mt-2 mb-4" />
       <div className="flex overflow-x-scroll -mx-2 my-4">
-        <CardRelatedProduct />
-        <CardRelatedProduct />
-        <CardRelatedProduct />
-        <CardRelatedProduct />
-        <CardRelatedProduct />
-        <CardRelatedProduct />
-        <CardRelatedProduct />
-        <CardRelatedProduct />
-        <CardRelatedProduct />
+        {
+          product_suggestions.map((p, i) => (
+            <CardRelatedProduct product={p} key={i} />
+          ))
+        }
       </div>
       <div className="text-pmbrown-700 mt-24 font-bold text-2xl">產品評價</div>
       <hr className="border-accent-2 mt-2 mb-4" />
@@ -114,10 +111,9 @@ export async function getStaticPaths() {
 // This also gets called at build time
 export async function getStaticProps({ params }) {
   let product = (await getOneProductDetails(params)) || {}
-  let relatedProduct = (await getRelatedProduct(params)) || {}
 
   // Pass post data to the page via props
   return {
-    props: { product, relatedProduct }
+    props: { product }
   }
 }
