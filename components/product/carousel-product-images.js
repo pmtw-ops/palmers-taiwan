@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { useState } from 'react'
+
 
 const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
 
-export default function CarouselProductImages({ images }) {
+export default function CarouselProductImages({ mainImage }) {
   // var featureImages = [];
 
   // /* --- Get Images List --- */
@@ -18,11 +18,6 @@ export default function CarouselProductImages({ images }) {
   //   }
   //   featureImages.push(image);
   // }
-  let [mainImage, setMainImage] = useState(images[0] ? (CMS_URL + images[0].url) : "https://via.placeholder.com/600");
-
-  const renderMainImage = (i) => {
-    setMainImage(images[i].url);
-  }
 
   return (
     <div className="block lg:p-0 lg:flex lg:justify-around">
@@ -44,7 +39,7 @@ export default function CarouselProductImages({ images }) {
         </div>
       </div> */}
       <div className="md:max-w-sm lg:max-w-xl">
-        <img className="p-4 object-cover" src={mainImage} alt=""></img>
+        <img className="p-4 object-cover" src={CMS_URL + mainImage?.url} alt=""></img>
       </div>
 
       {/* <div className="mt-2 mb-2 lg:hidden">

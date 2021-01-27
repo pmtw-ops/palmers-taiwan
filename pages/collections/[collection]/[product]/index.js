@@ -2,6 +2,7 @@ import Container from '@/components/container'
 import { getAllProductPaths } from '@/lib/api_collections'
 import { getOneProductDetails, getRelatedProduct } from '@/lib/api_products'
 import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
 import CardRelatedProduct from '@/components/product/card-related-product'
 import ProductReview from '@/components/product/product-review'
 import SectionSeparator from '@/components/section-separator'
@@ -24,11 +25,22 @@ export default function Product({ product }) {
     return <div className="text-center text-6xl">Loading...</div>
   }
 
+  let imgPlaceholder = {
+    url: "https://via.placeholder.com/600",
+    alternativeText: "",
+    caption: ""
+  }
+  let [mainImage, setMainImage] = useState(product.images[0] ? product.images[0] : imgPlaceholder);
+
+  useEffect(()=>{
+    setMainImage(product.images[0])
+  })
+
   return (
     <Container>
       <div className="block bg-white mt-4 md:grid md:grid-cols-2">
         <div className="w-full md:p-2">
-          <CarouselProductImages images={product.images}></CarouselProductImages>
+          <CarouselProductImages mainImage={mainImage}></CarouselProductImages>
         </div>
         <div className="w-full md:p-2">
           <ProductDescriptions product={product}></ProductDescriptions>
@@ -65,7 +77,7 @@ export default function Product({ product }) {
       <div className="p-2 mb-4">
         {product.warning}
       </div>
-      
+
       <div className="text-pmbrown-700 mt-24 font-bold text-2xl">其他展品推薦</div>
       <hr className="border-accent-2 mt-2 mb-4" />
       <div className="flex overflow-x-scroll -mx-2 my-4">
