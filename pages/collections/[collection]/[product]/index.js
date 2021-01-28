@@ -32,12 +32,16 @@ export default function Product({ product }) {
   }
   let [mainImage, setMainImage] = useState(product.images[0] ? product.images[0] : imgPlaceholder);
 
-  useEffect(()=>{
+  useEffect(() => {
     setMainImage(product.images[0])
   })
 
   return (
     <Container>
+      <Head>
+        <title>Palmer's {product.name}</title>
+        <meta name="description" content={product.metaDescription}></meta>
+      </Head>
       <div className="block bg-white mt-4 md:grid md:grid-cols-2">
         <div className="w-full md:p-2">
           <CarouselProductImages mainImage={mainImage}></CarouselProductImages>
