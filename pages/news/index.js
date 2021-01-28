@@ -2,7 +2,7 @@
 import Layout from '@/components/layout'
 import Container from '@/components/container'
 import { getAllPostsForHome } from '@/lib/api_products'
-import NewsPost from '@/components/news/news-post'
+import NewsItem from '@/components/news/news-item'
 import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 
@@ -20,19 +20,30 @@ export default function Index({ categories, collections, product, allPosts, prev
     <>
       <img className="" src="https://via.placeholder.com/1920x550" alt=""></img>
       <Container>
-        <div class="grid grid-cols-1 gap-4">
-          <NewsPost />
-          <NewsPost />
-          <NewsPost />
-          <NewsPost />
-          <NewsPost />
-          <NewsPost />
-          <NewsPost />
-          <NewsPost />
-          <NewsPost />
-          <NewsPost />
-          <NewsPost />
-          <NewsPost />
+        <div class="grid grid-cols-1 gap-2 border-2 border-black mb-2">
+          <div className="grid grid-cols-5 border-2 border-green-400 w-full px-2">
+            <div className="p-4 col-span-1">
+              Post
+            </div>
+            <div className="p-4 col-span-3">
+              Title
+            </div>
+            <div className="p-4 col-span-1">
+              Post Date
+            </div>
+          </div>
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
         </div>
       </Container>
     </>
