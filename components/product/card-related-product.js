@@ -5,7 +5,7 @@ const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT
 
 export default function CardRelatedProduct({ product }) {
   let images = product?.images[0];
-  let imgUrl = images ? CMS_URL + images.url : "https://via.placeholder.com/550x550"
+  let imgUrl = images ? CMS_URL + images.formats.small.url : "https://via.placeholder.com/550x550"
 
   let collection = product?.collections[0].name;
   let name = product?.name;
