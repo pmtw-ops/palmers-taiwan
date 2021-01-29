@@ -32,7 +32,6 @@ export default function Index({ categories, collections, product, allPosts, prev
               Post Date
             </div>
           </div>
-          <hr className="border-accent-7" />
           <NewsItem />
           <NewsItem />
           <NewsItem />
