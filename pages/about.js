@@ -2,6 +2,7 @@
 import { getAbout } from '@/lib/api_about'
 
 import Head from 'next/head'
+import Image from 'next/image'
 import Container from '@/components/container'
 import SectionSeparator from '@/components/section-separator'
 import CardSustainability from '@/components/about/card-sustainability'
@@ -21,7 +22,7 @@ export default function Index({ about }) {
   return (
     <>
       <div>
-        <img src={imgUrl} alt={imgAlt}></img>
+        <Image src={imgUrl} alt={imgAlt} width={1920} height={550} />
       </div>
 
       <Container>
