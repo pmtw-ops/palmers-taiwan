@@ -3,6 +3,7 @@ import { getHomePage } from '@/lib/api_home'
 import CardRelatedProduct from '@/components/product/card-related-product'
 import CardNews from '@/components/news/card-news'
 import Head from 'next/head'
+import Image from 'next/image'
 import React, { useContext } from "react";
 import AppContext from "@/context/appcontext";
 
@@ -15,7 +16,7 @@ export default function Index({ home }) {
 
   return (
     <>
-      <img className="" src={imgUrl} alt={""}></img>
+    <Image className="" src={imgUrl} alt={""} width={1920} height={550}/>
       <Container>
         <div className="text-pmbrown-700 mt-24 text-2xl">最新消息</div>
         <hr className="border-accent-2 mt-2 mb-4" />
