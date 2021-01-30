@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import ReviewStars from '@/components/product/review-stars'
 
 const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
@@ -17,9 +18,9 @@ export default function CardProduct({ product }) {
   return (
     <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 my-3 px-3">
       <div className="relative shadow-lg bg-white">
-        <picture className="block cursor-pointer bg-gray-200">
+        <picture className="block cursor-pointer">
           <Link href={p_url} passHref>
-            <img className="block" src={imgUrl} alt=""></img>
+            <Image className="block" src={imgUrl} alt="" width={500} height={500} />
           </Link>
         </picture>
         <div className="p-4 mt-2 text-center">

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 // import { CMS_URL } from '@/lib/constants'
 
 const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
@@ -12,7 +13,9 @@ export default function CardCollection({ i, collection }) {
   return (
     <div className="block m-4 bg-white shadow-md items-center md:flex" key={i}>
       <div className={i % 2 === 0 ? "order-first cursor-pointer" : "order-last cursor-pointer"}>
-        <Link href={collectionPath} passHref><img className="h-full w-full object-cover" src={imgUrl} alt={imgAlt}></img></Link>
+        <Link href={collectionPath} passHref>
+          <Image className="h-full w-full object-cover" src={imgUrl} alt={imgAlt} width={1000} height={550} />
+        </Link>
       </div>
       <div className="block w-full text-center">
         <Link href={collectionPath} passHref><h1 className="text-pmbrown-600 p-4 cursor-pointer text-6xl">{collection.name}</h1></Link>

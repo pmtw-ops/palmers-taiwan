@@ -2,6 +2,7 @@ import { getAllCollections, getOneCollectionProducts } from '@/lib/api_collectio
 import { useRouter } from 'next/router'
 import CardProduct from '@/components/product/card-product'
 import Container from '@/components/container'
+import Image from 'next/image'
 
 const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
 
@@ -18,7 +19,7 @@ export default function Collection({ oneCollectionProducts }) {
 
   return (
     <>
-      <img className="" src={imgUrl} alt=""></img>
+      <Image className="" src={imgUrl} alt="" width={1920} height={550}/>
       <Container>
         <div className="flex flex-row flex-wrap -mx-2 my-4">
           {products.map((product, i) => (

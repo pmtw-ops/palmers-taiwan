@@ -4,6 +4,7 @@ import Container from '@/components/container'
 import { getAllPostsForHome } from '@/lib/api_products'
 import NewsItem from '@/components/news/news-item'
 import Head from 'next/head'
+import Image from 'next/image'
 import { CMS_NAME } from '@/lib/constants'
 
 import CardProduct from '@/components/product/card-product'
@@ -18,7 +19,8 @@ export default function Index({ categories, collections, product, allPosts, prev
   // const morePosts = allPosts.slice(1)
   return (
     <>
-      <img className="" src="https://via.placeholder.com/1920x550" alt=""></img>
+      <Image className="" src="https://via.placeholder.com/1920x550" alt="" width={1920} height={550}/>
+      {/* <img className="" src="https://via.placeholder.com/1920x550" alt=""></img> */}
       <Container>
         <div className="grid grid-cols-1 gap-2 border-2 border-black mb-2">
           <div className="grid grid-cols-5 border-2 border-green-400 w-full px-2">
