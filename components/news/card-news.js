@@ -7,7 +7,7 @@ export default function CardNews() {
     <div className="w-full sm:w-1/2 md:w-1/2 my-3 px-3">
       <div className="shadow-md bg-white">
         <div className="relative" style={{ paddingBottom: "50%" }}>
-          <img className="absolute cursor-pointer object-cover" src={"https://via.placeholder.com/650x325"} alt=""></img>
+          <img className="absolute cursor-pointer object-cover" src={"https://via.placeholder.com/750x375"} alt=""></img>
         </div>
         <div className="p-4">
           <div>
