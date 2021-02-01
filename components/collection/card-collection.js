@@ -14,7 +14,7 @@ export default function CardCollection({ i, collection }) {
     <div className="block m-4 bg-white shadow-md items-center md:flex" key={i}>
       <div className={i % 2 === 0 ? "order-first cursor-pointer" : "order-last cursor-pointer"}>
         <Link href={collectionPath} passHref>
-          <Image className="h-full w-full object-cover" src={imgUrl} alt={imgAlt} width={1000} height={550} />
+          <img className="h-full w-full object-cover" src={imgUrl} alt={imgAlt} width={1000} height={650} />
         </Link>
       </div>
       <div className="block w-full text-center">
