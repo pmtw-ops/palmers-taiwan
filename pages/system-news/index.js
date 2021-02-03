@@ -13,11 +13,11 @@ import Link from 'next/link'
 const NEXT_PUBLIC_STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL
 
 
-export default function Index({ categories, collections, product, allPosts, preview }) {
+export default function Index({ categories, collections, product, allPosts, preview, appData }) {
   // const heroPost = allPosts[0]
   // const morePosts = allPosts.slice(1)
   return (
-    <>
+    <Layout appData={appData}>
       <img className="" src="https://via.placeholder.com/1920x550" alt=""></img>
       <Container>
         <div className="grid grid-cols-1 gap-2 border-2 border-black mb-2">
@@ -46,7 +46,7 @@ export default function Index({ categories, collections, product, allPosts, prev
           <NewsItem />
         </div>
       </Container>
-    </>
+    </Layout>
   )
 }
 
