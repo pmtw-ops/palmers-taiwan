@@ -13,7 +13,8 @@
       "@/components/news/*": ["components/news/*"],
       "@/lib/*": ["lib/*"],
       "@/styles/*": ["styles/*"],
-      "@/context/*": ["context/*"]
+      "@/redux/*": ["redux/*"],
+      "@/redux/slices/*": ["redux/slices/*"]
     }
   }
 }

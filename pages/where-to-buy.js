@@ -1,4 +1,5 @@
 import Container from '@/components/container'
+import Layout from '@/components/layout'
 import { getAllProductPaths } from '@/lib/api_collections'
 import { getOneProductDetails, getRelatedProduct } from '@/lib/api_products'
 import { useRouter } from 'next/router'
@@ -13,7 +14,7 @@ import ProductDescriptions from '@/components/product/product-descriptions'
 import Link from 'next/link'
 
 
-export default function Product({ product }) {
+export default function WhereToBuy({ appData }) {
   // const heroPost = allPosts[0]
   // const morePosts = allPosts.slice(1)
   const router = useRouter()
@@ -23,9 +24,11 @@ export default function Product({ product }) {
   }
 
   return (
-    <Container>
-      <div className="text-center text-6xl">Under Constructions...</div>
-    </Container>
+    <Layout appData={appData}>
+      <Container>
+        <div className="text-center text-6xl">Under Constructions...</div>
+      </Container>
+    </Layout>
   )
 }
 
@@ -34,6 +37,6 @@ export async function getStaticProps({ params }) {
 
   // Pass post data to the page via props
   return {
-    props: { }
+    props: {}
   }
 }
