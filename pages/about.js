@@ -8,8 +8,7 @@ import Layout from '@/components/layout'
 import Container from '@/components/container'
 import SectionSeparator from '@/components/section-separator'
 import CardSustainability from '@/components/about/card-sustainability'
-
-const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+import { CMS_URL } from '@/lib/constants'
 
 export default function Index({ about, appData }) {
   let today = new Date();
