@@ -1,12 +1,13 @@
 import { getAllCollections, getOneCollectionProducts } from '@/lib/api_collections'
+import { getAppData } from '@/lib/api_app'
 import { useRouter } from 'next/router'
 import CardProduct from '@/components/product/card-product'
 import Container from '@/components/container'
+import Layout from '@/components/layout'
 import Image from 'next/image'
+import { CMS_URL } from '@/lib/constants'
 
-const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
-
-export default function Collection({ oneCollectionProducts }) {
+export default function Collection({ appData, oneCollectionProducts }) {
   const products = oneCollectionProducts?.products;
   const bannerImage = oneCollectionProducts?.featureImage[0];
   const router = useRouter()
@@ -18,8 +19,8 @@ export default function Collection({ oneCollectionProducts }) {
   }
 
   return (
-    <>
-      <Image className="" src={imgUrl} alt="" width={1920} height={550}/>
+    <Layout appData={appData}>
+      <Image className="" src={imgUrl} alt="" width={1920} height={550} />
       <Container>
         <div className="flex flex-row flex-wrap -mx-2 my-4">
           {products.map((product, i) => (
@@ -27,7 +28,7 @@ export default function Collection({ oneCollectionProducts }) {
           ))}
         </div>
       </Container>
-    </>
+    </Layout>
   )
 }
 
@@ -48,10 +49,11 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
+  const appData = (await getAppData()) || []
   const oneCollectionProducts = (await getOneCollectionProducts(params.collection)) || []
 
   // Pass post data to the page via props
   return {
-    props: { oneCollectionProducts }
+    props: { appData, oneCollectionProducts }
   }
 }

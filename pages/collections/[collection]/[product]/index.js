@@ -1,4 +1,6 @@
 import Container from '@/components/container'
+import Layout from '@/components/layout'
+import { getAppData } from '@/lib/api_app'
 import { getAllProductPaths } from '@/lib/api_collections'
 import { getOneProductDetails, getRelatedProduct } from '@/lib/api_products'
 import { useRouter } from 'next/router'
@@ -15,7 +17,7 @@ import ProductDescriptions from '@/components/product/product-descriptions'
 import Link from 'next/link'
 
 
-export default function Product({ product }) {
+export default function Product({ product, appData }) {
   // const heroPost = allPosts[0]
   // const morePosts = allPosts.slice(1)
   const router = useRouter()
@@ -37,64 +39,66 @@ export default function Product({ product }) {
   })
 
   return (
-    <Container>
-      <Head>
-        <title>Palmer's {product.name}</title>
-        <meta name="description" content={product.metaDescription}></meta>
-      </Head>
-      <div className="block bg-white mt-4 md:grid md:grid-cols-2">
-        <div className="w-full md:p-2">
-          <CarouselProductImages mainImage={mainImage}></CarouselProductImages>
+    <Layout appData={appData}>
+      <Container>
+        <Head>
+          <title>Palmer's {product.name}</title>
+          <meta name="description" content={product.metaDescription}></meta>
+        </Head>
+        <div className="block bg-white mt-4 md:grid md:grid-cols-2">
+          <div className="w-full md:p-2">
+            <CarouselProductImages mainImage={mainImage}></CarouselProductImages>
+          </div>
+          <div className="w-full md:p-2">
+            <ProductDescriptions product={product}></ProductDescriptions>
+          </div>
         </div>
-        <div className="w-full md:p-2">
-          <ProductDescriptions product={product}></ProductDescriptions>
+        <div className="p-4 m-4"></div>
+        <div className="text-pmbrown-700 font-bold text-2xl">產品特點</div>
+        <hr className="border-accent-2 mt-2 mb-4" />
+        <div className="p-2 mb-4">
+          {product.feature}
         </div>
-      </div>
-      <div className="p-4 m-4"></div>
-      <div className="text-pmbrown-700 font-bold text-2xl">產品特點</div>
-      <hr className="border-accent-2 mt-2 mb-4" />
-      <div className="p-2 mb-4">
-        {product.feature}
-      </div>
-      <div className="text-pmbrown-700 font-bold text-2xl">使用方法</div>
-      <hr className="border-accent-2 mt-2 mb-4" />
-      <div className="p-2">
-        {product.uses}
-      </div>
-      <div className="p-2">
-        {product.direction}
-      </div>
-      <div className="p-2">
-        {product.skin_type}
-      </div>
-      <div className="p-2">
-        產地: {product.origin}
-      </div>
-      <div className="p-2">
-        保存期限: {product.expiration}
-      </div>
-      <div className="p-2 mb-4">
-        {product.storage}
-      </div>
-      <div className="text-pmbrown-700 font-bold text-2xl">注意事項</div>
-      <hr className="border-accent-2 mt-2 mb-4" />
-      <div className="p-2 mb-4">
-        {product.warning}
-      </div>
+        <div className="text-pmbrown-700 font-bold text-2xl">使用方法</div>
+        <hr className="border-accent-2 mt-2 mb-4" />
+        <div className="p-2">
+          {product.uses}
+        </div>
+        <div className="p-2">
+          {product.direction}
+        </div>
+        <div className="p-2">
+          {product.skin_type}
+        </div>
+        <div className="p-2">
+          產地: {product.origin}
+        </div>
+        <div className="p-2">
+          保存期限: {product.expiration}
+        </div>
+        <div className="p-2 mb-4">
+          {product.storage}
+        </div>
+        <div className="text-pmbrown-700 font-bold text-2xl">注意事項</div>
+        <hr className="border-accent-2 mt-2 mb-4" />
+        <div className="p-2 mb-4">
+          {product.warning}
+        </div>
 
-      <div className="text-pmbrown-700 mt-24 font-bold text-2xl">其他展品推薦</div>
-      <hr className="border-accent-2 mt-2 mb-4" />
-      <div className="flex overflow-x-scroll -mx-2 my-4">
-        {
-          product_suggestions.map((p, i) => (
-            <CardRelatedProduct product={p} key={i} />
-          ))
-        }
-      </div>
-      <div className="text-pmbrown-700 mt-24 font-bold text-2xl">產品評價</div>
-      <hr className="border-accent-2 mt-2 mb-4" />
-      <ProductReview />
-    </Container>
+        <div className="text-pmbrown-700 mt-24 font-bold text-2xl">其他展品推薦</div>
+        <hr className="border-accent-2 mt-2 mb-4" />
+        <div className="flex overflow-x-scroll -mx-2 my-4">
+          {
+            product_suggestions.map((p, i) => (
+              <CardRelatedProduct product={p} key={i} />
+            ))
+          }
+        </div>
+        <div className="text-pmbrown-700 mt-24 font-bold text-2xl">產品評價</div>
+        <hr className="border-accent-2 mt-2 mb-4" />
+        <ProductReview />
+      </Container>
+    </Layout>
   )
 }
 
@@ -126,10 +130,11 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
+  const appData = (await getAppData()) || []
   let product = (await getOneProductDetails(params)) || {}
 
   // Pass post data to the page via props
   return {
-    props: { product }
+    props: { appData, product }
   }
 }

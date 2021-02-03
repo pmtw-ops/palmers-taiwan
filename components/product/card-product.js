@@ -1,8 +1,8 @@
+import { forwardRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ReviewStars from '@/components/product/review-stars'
-
-const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+import { CMS_URL } from '@/lib/constants'
 
 export default function CardProduct({ product }) {
   let images = product?.images[0];
@@ -20,7 +20,9 @@ export default function CardProduct({ product }) {
       <div className="relative shadow-lg bg-white">
         <picture className="block cursor-pointer">
           <Link href={p_url} passHref>
-            <Image className="block" src={imgUrl} alt="" width={500} height={500} />
+            <picture>
+              <Image className="block" src={imgUrl} alt="" width={500} height={500} />
+            </picture>
           </Link>
         </picture>
         <div className="p-4 mt-2 text-center">
