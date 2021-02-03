@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import Container from '@/components/container'
 import { useState } from 'react'
-
-const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+import { CMS_URL } from '@/lib/constants'
 
 export default function NavMenuResponsive({ appData }) {
   let [menuP, setMenuProfile] = useState(false);

@@ -1,13 +1,13 @@
 import Container from '@/components/container'
 import Layout from '@/components/layout'
 import { getHomePage } from '@/lib/api_home'
+import { getAppData } from '@/lib/api_app'
 import CardRelatedProduct from '@/components/product/card-related-product'
 import CardNews from '@/components/news/card-news'
 import Head from 'next/head'
 import Image from 'next/image'
 import React from "react";
-
-const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+import { CMS_URL } from '@/lib/constants'
 
 export default function Index({ home, appData }) {
   let bannerImage = home?.image[0]
@@ -42,8 +42,9 @@ export default function Index({ home, appData }) {
 
 export async function getStaticProps({ preview = null }) {
   const home = (await getHomePage(preview)) || []
+  const appData = (await getAppData()) || []
 
   return {
-    props: { home }
+    props: { home, appData }
   }
 }

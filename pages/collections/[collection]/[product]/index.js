@@ -1,5 +1,6 @@
 import Container from '@/components/container'
 import Layout from '@/components/layout'
+import { getAppData } from '@/lib/api_app'
 import { getAllProductPaths } from '@/lib/api_collections'
 import { getOneProductDetails, getRelatedProduct } from '@/lib/api_products'
 import { useRouter } from 'next/router'
@@ -129,10 +130,11 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
+  const appData = (await getAppData()) || []
   let product = (await getOneProductDetails(params)) || {}
 
   // Pass post data to the page via props
   return {
-    props: { product }
+    props: { appData, product }
   }
 }

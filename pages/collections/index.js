@@ -2,12 +2,12 @@ import Container from '@/components/container'
 import Layout from '@/components/layout'
 // import { getAllPostsForHome } from '@/lib/api_products'
 import { getAllCollections, getCollectionsStatic } from '@/lib/api_collections'
+import { getAppData } from '@/lib/api_app'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import CardCollection from '@/components/collection/card-collection'
-
-const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+import { CMS_URL } from '@/lib/constants'
 
 export default function Collections({ allCollections, collectionsStatic, appData }) {
   let bannerImage = collectionsStatic.image[0];
@@ -16,7 +16,7 @@ export default function Collections({ allCollections, collectionsStatic, appData
 
   return (
     <Layout appData={appData}>
-      <Image className="" src={imgUrl} alt={bannerImageAlt} width={1920} height={550}/>
+      <Image className="" src={imgUrl} alt={bannerImageAlt} width={1920} height={550} />
       <Container>
         <div className="">
           {allCollections.map((collection, i) => (<CardCollection key={i} i={i} collection={collection} />))}
@@ -26,11 +26,12 @@ export default function Collections({ allCollections, collectionsStatic, appData
   )
 }
 
-export async function getStaticProps({ preview = null }) {
+export async function getStaticProps({ }) {
+  const appData = (await getAppData()) || []
   const allCollections = (await getAllCollections()) || []
   const collectionsStatic = (await getCollectionsStatic()) || []
 
   return {
-    props: { allCollections, collectionsStatic }
+    props: { appData, allCollections, collectionsStatic }
   }
 }

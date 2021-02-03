@@ -1,8 +1,7 @@
 
 import Link from 'next/link'
 import ReviewStars from '@/components/product/review-stars'
-
-const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+import { CMS_URL } from '@/lib/constants'
 
 export default function ProductReview({ product }) {
   return (
