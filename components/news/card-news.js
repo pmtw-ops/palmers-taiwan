@@ -1,15 +1,15 @@
 import Link from 'next/link'
-
-const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+import Image from 'next/image'
+import { CMS_URL } from '@/lib/constants'
 
 export default function CardNews() {
   return (
     <div className="w-full sm:w-1/2 md:w-1/2 my-3 px-3">
       <div className="shadow-md bg-white">
-        <div className="relative" style={{ paddingBottom: "50%" }}>
-          <img className="absolute cursor-pointer object-cover" src={"https://via.placeholder.com/750x375"} alt=""></img>
-        </div>
-        <div className="p-4">
+        <picture className="block cursor-pointer">
+          <Image className="absolute cursor-pointer object-cover -mb-1" src={"https://via.placeholder.com/750x375"} alt="" width={750} height={375} />
+        </picture>
+        <div className="p-4 -mt-1">
           <div>
             This is the title of the news post.
           </div>

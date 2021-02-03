@@ -1,5 +1,6 @@
 
 import { getAbout } from '@/lib/api_about'
+import { getAppData } from '@/lib/api_app'
 
 import Head from 'next/head'
 import Image from 'next/image'
@@ -23,7 +24,6 @@ export default function Index({ about, appData }) {
   return (
     <>
       <Layout appData={appData}>
-
         <div>
           <Image src={imgUrl} alt={imgAlt} width={1920} height={550} />
         </div>
@@ -62,8 +62,9 @@ export default function Index({ about, appData }) {
 
 export async function getStaticProps({ preview = null }) {
   const about = (await getAbout()) || []
+  const appData = (await getAppData()) || []
 
   return {
-    props: { about }
+    props: { about, appData }
   }
 }

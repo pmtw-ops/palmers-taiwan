@@ -1,5 +1,6 @@
 
 import { getContactUs } from '@/lib/api_contact-us'
+import { getAppData } from '@/lib/api_app'
 
 import Layout from '@/components/layout'
 import Container from '@/components/container'
@@ -10,8 +11,7 @@ import CardProduct from '@/components/product/card-product'
 
 import Link from 'next/link'
 import Image from 'next/image'
-
-const CMS_URL = process.env.NEXT_PUBLIC_USE_DEV_DB === 'true' ? process.env.NEXT_PUBLIC_DEV_API_URL : process.env.NEXT_PUBLIC_PROD_API_URL;
+import { CMS_URL } from '@/lib/constants'
 
 export default function Index({ contactUs, appData }) {
   let image = contactUs?.image[0];
@@ -69,10 +69,11 @@ export default function Index({ contactUs, appData }) {
   )
 }
 
-export async function getStaticProps({ preview = null }) {
+export async function getStaticProps({ }) {
   const contactUs = (await getContactUs()) || []
+  const appData = (await getAppData()) || []
 
   return {
-    props: { contactUs }
+    props: { contactUs, appData }
   }
 }

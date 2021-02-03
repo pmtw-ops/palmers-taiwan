@@ -3,6 +3,7 @@ import Layout from '@/components/layout'
 import { getAllProductPaths } from '@/lib/api_collections'
 import { getOneProductDetails, getRelatedProduct } from '@/lib/api_products'
 import { useRouter } from 'next/router'
+import { getAppData } from '@/lib/api_app'
 import CardRelatedProduct from '@/components/product/card-related-product'
 import SectionSeparator from '@/components/section-separator'
 import markdownToHtml from '@/lib/markdownToHtml'
@@ -34,9 +35,10 @@ export default function WhereToBuy({ appData }) {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
+  const appData = (await getAppData()) || []
 
   // Pass post data to the page via props
   return {
-    props: {}
+    props: { appData }
   }
 }
