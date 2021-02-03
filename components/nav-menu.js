@@ -69,9 +69,11 @@ export default function NavMenuResponsive({ appData }) {
               {/* --- Profile Drop Down --- */}
               <div className="ml-3 relative">
                 <div>
-                  <button onClick={() => { toggleProfile() }} className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
+                  <button onClick={() => { toggleProfile() }} className="bg-gray-600 flex text-sm rounded-full ring-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
                     <span className="sr-only">Open user menu</span>
-                    <img className="h-8 w-8 rounded-full" src="https://via.placeholder.com/100" alt="" />
+                    <svg className="h-8 w-8 rounded-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
                   </button>
                 </div>
                 <div className={(menuP ? "block" : "hidden") + " origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5"} role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
