@@ -37,15 +37,12 @@ export default function Index({ about, appData }) {
             <div className="font-bold text-pmbrown-400 text-4xl p-3">帕瑪氏的天然成分</div>
           </div>
 
-
-
-
-          <div className="m-4 flex items-center justify-center flex-wrap lg:grid lg:grid-cols-3">
-            <div className="col-span-1 m-2 opacity-75">
-              <img className="" src="https://via.placeholder.com/300x350" alt=""></img>
+          <div className="block m-4 items-center justify-center md:flex md:flex-wrap lg:grid lg:grid-cols-5">
+            <div className="items-center lg:order-first col-span-2 m-2">
+              <Image src={"https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
             </div>
-            <div className="col-span-2 p-1 m-4">
-              <div className="font-bold text-2xl p-1">可可脂 COCOA BUTTER</div>
+            <div className="col-span-3 p-1 m-4">
+              <div className="font-bold text-2xl p-2 text-center lg:text-left">可可脂 COCOA BUTTER</div>
               <p className="p-1">在過去40年中，我們的核心成分是可可脂，實際上，我們每年購買超過265,000磅的可可脂。 我們稱其為自然的超級成分，因為它具有出色的癒合性能以及幫助皮膚保持水分的能力。</p>
               <p className="p-1">可可脂是從可可豆中提取的豐富植物脂肪，可可豆生長在可可樹的可可豆莢中。 成熟時，這些豆莢是從樹乾和樹枝上收穫的，並用與豆子質量相對應的顏色分開。 香氣和風味較差的那些可用於工業巧克力，而帕爾默的可可脂配方則使用更高質量的豆。</p>
               <p className="p-1">Palmer's致力於照顧您的皮膚。我們從加納采購最原始，最優質的可可脂，那裡有世界上最優質的可可豆。</p>
@@ -53,25 +50,25 @@ export default function Index({ about, appData }) {
             </div>
           </div>
 
-          <div className="m-4 flex items-center justify-center flex-wrap lg:grid lg:grid-cols-3">
-            <div className="col-span-2 p-1 m-4">
-              <div className="font-bold text-2xl p-1">椰子油 COCONUT OIL</div>
+          <div className="block m-4 items-center justify-center md:flex md:flex-wrap lg:grid lg:grid-cols-5">
+            <div className="lg:order-last lg:col-span-2 m-2">
+              <Image src={"https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
+            </div>
+            <div className="lg:col-span-3 p-1 m-4">
+              <div className="font-bold text-2xl p-2 text-center lg:text-left">椰子油 COCONUT OIL</div>
               <p className="p-1">椰子油中富含天然健康的皮膚和頭髮成分，例如月桂酸，辛酸，癸酸，蛋白質，抗氧化劑和維生素E。</p>
               <p className="p-1">椰子油還含有高含量的中鏈脂肪酸，可形成透氣的保護性屏障，有助於鎖定水分，防止皮膚脫水並促進更健康的頭髮。</p>
               <p className="p-1">月桂酸佔椰子油中的大部分脂肪酸，並且因其抗微生物和抗菌性能而非常有價值。</p>
               <p className="p-1">天然抗氧化劑有助於保持皮膚年輕。 維生素E和蛋白質能夠使肌膚恢復活力，撫平肌膚，並使秀發更加豐盈。</p>
             </div>
-            <div className="col-span-1 m-2 opacity-75">
-              <img className="" src="https://via.placeholder.com/300x350" alt=""></img>
-            </div>
           </div>
 
-          <div className="m-4 flex items-center justify-center flex-wrap lg:grid lg:grid-cols-3">
-            <div className="col-span-1 m-2 opacity-75">
-              <img className="" src="https://via.placeholder.com/300x350" alt=""></img>
+          <div className="block m-4 items-center justify-center md:flex md:flex-wrap lg:grid lg:grid-cols-5">
+            <div className="lg:order-first col-span-2 m-2">
+              <Image src={"https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
             </div>
-            <div className="col-span-2 p-1 m-4">
-              <div className="font-bold text-2xl p-1">乳油木果油SHEA BUTTER</div>
+            <div className="lg:col-span-3 p-1 m-4">
+              <div className="font-bold text-2xl p-2 text-center lg:text-left">乳油木果油SHEA BUTTER</div>
               <p className="p-1">在過去40年中，我們的核心成分是可可脂，實際上，我們每年購買超過265,000磅的可可脂。 我們稱其為自然的超級成分，因為它具有出色的癒合性能以及幫助皮膚保持水分的能力。</p>
               <p className="p-1">可可脂是從可可豆中提取的豐富植物脂肪，可可豆生長在可可樹的可可豆莢中。 成熟時，這些豆莢是從樹乾和樹枝上收穫的，並用與豆子質量相對應的顏色分開。 香氣和風味較差的那些可用於工業巧克力，而帕爾默的可可脂配方則使用更高質量的豆。</p>
               <p className="p-1">Palmer's致力於照顧您的皮膚。我們從加納采購最原始，最優質的可可脂，那裡有世界上最優質的可可豆。</p>
@@ -79,26 +76,25 @@ export default function Index({ about, appData }) {
             </div>
           </div>
 
-          <div className="m-4 flex items-center justify-center flex-wrap lg:grid lg:grid-cols-3">
-            <div className="col-span-2 p-1 m-4">
-              <div className="font-bold text-2xl p-1">橄欖油 OLIVE OIL</div>
-              <p className="p-1">帕瑪氏的橄欖油配方產品包含特級初榨橄欖油，其中所含的抗氧化劑可保護皮膚和頭髮免受自由基的傷害，從而使皮膚看上去暗淡無味。</p>
+          <div className="block m-4 items-center justify-center md:flex md:flex-wrap lg:grid lg:grid-cols-5">
+            <div className="lg:order-last col-span-2 m-2">
+              <Image src={"https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
             </div>
-            <div className="col-span-1 m-2 opacity-75">
-              <img className="" src="https://via.placeholder.com/300x350" alt=""></img>
+            <div className="lg:col-span-3 p-1 m-4">
+              <div className="font-bold text-2xl p-2 text-center lg:text-left">橄欖油 OLIVE OIL</div>
+              <p className="p-1">帕瑪氏的橄欖油配方產品包含特級初榨橄欖油，其中所含的抗氧化劑可保護皮膚和頭髮免受自由基的傷害，從而使皮膚看上去暗淡無味。</p>
             </div>
           </div>
 
-          <div className="m-4 flex items-center justify-center flex-wrap lg:grid lg:grid-cols-3">
-            <div className="col-span-1 m-2 opacity-75">
-              <img className="" src="https://via.placeholder.com/300x350" alt=""></img>
+          <div className="block m-4 items-center justify-center md:flex md:flex-wrap lg:grid lg:grid-cols-5">
+            <div className="lg:order-first col-span-2 m-2">
+              <Image src={"https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
             </div>
-            <div className="col-span-2 p-1 m-4">
-              <div className="font-bold text-2xl p-1">維他命E VITAMIN E</div>
+            <div className="lg:col-span-3 p-1 m-4">
+              <div className="font-bold text-2xl p-2 text-center lg:text-left">維他命E VITAMIN E</div>
               <p className="p-1">帕瑪氏的天然維生素E護膚產品經特殊配製，可舒緩和滋養乾燥的皮膚。</p>
             </div>
           </div>
-
 
         </Container>
       </Layout>
