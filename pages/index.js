@@ -17,7 +17,7 @@ export default function Index({ home, appData }) {
   return (
     <Layout appData={appData}>
       <Image className="" src={imgUrl} alt={""} width={1920} height={550} />
-      <div className="py-4 bg-gray-200 -mt-2">
+      <div className="-mt-2">
         <Container>
           <div>品牌介紹</div>
           <div>品牌介紹</div>
@@ -36,8 +36,7 @@ export default function Index({ home, appData }) {
           <div>品牌介紹</div>
         </Container>
       </div>
-      <div className="bg-gray-200 -mt-2">
-
+      <div className="-mt-2">
         <Container>
           <div className="text-pmbrown-700 mt-24 text-2xl">最新消息</div>
           <hr className="border-accent-2 mt-2 mb-4" />
@@ -49,8 +48,7 @@ export default function Index({ home, appData }) {
           </div>
         </Container>
       </div>
-      <div className="bg-gray-200 -mt-2">
-
+      <div className="-mt-2">
         <Container>
           <div className="text-pmbrown-700 mt-24 text-2xl">其他展品推薦</div>
           <hr className="border-accent-2 mt-2 mb-4" />
