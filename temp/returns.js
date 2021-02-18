@@ -1,6 +1,6 @@
 import Container from '@/components/container'
 import InfoBlock from '@/components/legal/info-block'
-import { getTermsAndConditions } from '@/lib/api_terms'
+import { getTermsAndConditions } from '@/graphql/api_terms'
 import Head from 'next/head'
 
 export default function Index({ termsAndCondition }) {

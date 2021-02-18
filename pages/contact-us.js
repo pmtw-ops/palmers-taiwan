@@ -1,6 +1,6 @@
 
-import { getContactUs } from '@/lib/api_contact-us'
-import { getAppData } from '@/lib/api_app'
+import { getContactUs } from '@/graphql/api_contact-us'
+import { getAppData } from '@/graphql/api_app'
 
 import Layout from '@/components/layout'
 import Container from '@/components/container'

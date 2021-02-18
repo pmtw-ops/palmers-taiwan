@@ -1,6 +1,6 @@
 
-import { getAbout } from '@/lib/api_about'
-import { getAppData } from '@/lib/api_app'
+import { getAbout } from '@/graphql/api_about'
+import { getAppData } from '@/graphql/api_app'
 
 import Head from 'next/head'
 import Image from 'next/image'
