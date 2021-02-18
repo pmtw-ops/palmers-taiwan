@@ -1,4 +1,4 @@
-import { getPreviewPostBySlug } from '@/lib/api_products'
+import { getPreviewPostBySlug } from '@/graphql/api_products'
 
 export default async function preview(req, res) {
   // Check the secret and next parameters

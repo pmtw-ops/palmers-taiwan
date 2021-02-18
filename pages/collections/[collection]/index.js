@@ -1,5 +1,5 @@
-import { getAllCollections, getOneCollectionProducts } from '@/lib/api_collections'
-import { getAppData } from '@/lib/api_app'
+import { getAllCollections, getOneCollectionProducts } from '@/graphql/api_collections'
+import { getAppData } from '@/graphql/api_app'
 import { useRouter } from 'next/router'
 import CardProduct from '@/components/product/card-product'
 import Container from '@/components/container'

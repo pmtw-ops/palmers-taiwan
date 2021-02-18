@@ -11,10 +11,11 @@
       "@/components/legal/*": ["components/legal/*"],
       "@/components/product/*": ["components/product/*"],
       "@/components/news/*": ["components/news/*"],
+      "@/graphql/*": ["lib/graphql/*"],
       "@/lib/*": ["lib/*"],
-      "@/styles/*": ["styles/*"],
       "@/redux/*": ["lib/redux/*"],
-      "@/redux/slices/*": ["lib/redux/slices/*"]
+      "@/redux/slices/*": ["lib/redux/slices/*"],
+      "@/styles/*": ["styles/*"],
     }
   }
 }
