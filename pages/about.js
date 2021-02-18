@@ -30,7 +30,7 @@ export default function Index({ about, appData }) {
         <Container>
           <div className="text-center p-1 m-7">
             {/* <p>美國原裝進口品牌-帕瑪氏，成立於1840年，是美國最早投入問題肌膚和頭髮養護研發製造者之一。成立{years}年來，始終堅持安全及有效的兩大經營理念，一系列高品質、天然成分的肌膚及髮部商品，都必須經過長時間的研發，並通過安全性及有效性的驗證後，才上市銷售。尤其是獨特的可可脂專業配方更是獨步全球，沒有任何一家競爭者可以仿製!目前行銷遍佈世界100餘國，擁有廣大的愛用者。</p> */}
-            <p className="p-2">帕瑪氏成立於 {years} 年前，是美國最早的皮膚護理公司之一。 布朗藥業有限公司（Browne Drug Co., Inc.）憑藉其值得信賴的 Palmer’s 品牌，是治療為導向的美容產品中的領導者。Palmer’s 的產品值得信賴，並世代相傳。</p>
+            <p className="p-2">帕瑪氏成立於 {years} 年前（1920），是美國最早的皮膚護理公司之一。 布朗藥業有限公司（Browne Drug Co., Inc.）憑藉其值得信賴的 Palmer’s 品牌，是治療為導向的美容產品中的領導者。Palmer’s 的產品值得信賴，並世代相傳。</p>
             <p className="p-2">“選擇真正天然的產品”是我們生產的每一種產品的基本理念。真正有效的配方中的高品質，天然成分，以實惠的價格為真實的人們提供。Palmer's 在全球 100 多個國家銷售，以可可脂配方而聞名，在美國是排名第一的可可脂品牌。</p>
           </div>
           <div className="text-center p-1 m-7">
@@ -39,7 +39,7 @@ export default function Index({ about, appData }) {
 
           <div className="block m-4 items-center justify-center md:flex md:flex-wrap lg:grid lg:grid-cols-5">
             <div className="items-center lg:order-first col-span-2 m-2">
-              <Image src={"https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
+              <Image src={about ? CMS_URL + about.contentImages[0].url : "https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
             </div>
             <div className="col-span-3 p-1 m-4">
               <div className="font-bold text-2xl p-2 text-center lg:text-left">可可脂 COCOA BUTTER</div>
@@ -52,7 +52,7 @@ export default function Index({ about, appData }) {
 
           <div className="block m-4 items-center justify-center md:flex md:flex-wrap lg:grid lg:grid-cols-5">
             <div className="lg:order-last lg:col-span-2 m-2">
-              <Image src={"https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
+              <Image src={about ? CMS_URL + about.contentImages[1].url : "https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
             </div>
             <div className="lg:col-span-3 p-1 m-4">
               <div className="font-bold text-2xl p-2 text-center lg:text-left">椰子油 COCONUT OIL</div>
@@ -65,7 +65,7 @@ export default function Index({ about, appData }) {
 
           <div className="block m-4 items-center justify-center md:flex md:flex-wrap lg:grid lg:grid-cols-5">
             <div className="lg:order-first col-span-2 m-2">
-              <Image src={"https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
+              <Image src={about ? CMS_URL + about.contentImages[2].url : "https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
             </div>
             <div className="lg:col-span-3 p-1 m-4">
               <div className="font-bold text-2xl p-2 text-center lg:text-left">乳油木果油SHEA BUTTER</div>
@@ -78,7 +78,7 @@ export default function Index({ about, appData }) {
 
           <div className="block m-4 items-center justify-center md:flex md:flex-wrap lg:grid lg:grid-cols-5">
             <div className="lg:order-last col-span-2 m-2">
-              <Image src={"https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
+              <Image src={about ? CMS_URL + about.contentImages[3].url : "https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
             </div>
             <div className="lg:col-span-3 p-1 m-4">
               <div className="font-bold text-2xl p-2 text-center lg:text-left">橄欖油 OLIVE OIL</div>
@@ -88,7 +88,7 @@ export default function Index({ about, appData }) {
 
           <div className="block m-4 items-center justify-center md:flex md:flex-wrap lg:grid lg:grid-cols-5">
             <div className="lg:order-first col-span-2 m-2">
-              <Image src={"https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
+              <Image src={about ? CMS_URL + about.contentImages[4].url : "https://via.placeholder.com/700x400"} alt={""} width={700} height={400} />
             </div>
             <div className="lg:col-span-3 p-1 m-4">
               <div className="font-bold text-2xl p-2 text-center lg:text-left">維他命E VITAMIN E</div>
