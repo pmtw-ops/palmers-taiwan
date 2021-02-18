@@ -1,8 +1,8 @@
 
 import Layout from '@/components/layout'
 import Container from '@/components/container'
-import { getAllPostsForHome } from '@/lib/api_products'
-import { getAppData } from '@/lib/api_app'
+import { getAllPostsForHome } from '@/graphql/api_products'
+import { getAppData } from '@/graphql/api_app'
 import NewsItem from '@/components/news/news-item'
 import Head from 'next/head'
 import Image from 'next/image'

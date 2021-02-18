@@ -1,5 +1,5 @@
-import { getAllNewsPosts } from '@/lib/api_news'
-import { getAppData } from '@/lib/api_app'
+import { getAllNewsPosts } from '@/graphql/api_news'
+import { getAppData } from '@/graphql/api_app'
 import { useRouter } from 'next/router'
 import Container from '@/components/container'
 import Layout from '@/components/layout'
