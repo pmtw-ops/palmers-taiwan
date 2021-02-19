@@ -15,53 +15,61 @@ export default function Index({ home, appData }) {
   let product_suggestions = home?.product_suggestions;
 
   return (
-    <Layout appData={appData}>
-      <Image className="" src={imgUrl} alt={""} width={1920} height={550} />
-      <div className="-mt-2">
-        <Container>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-          <div>品牌介紹</div>
-        </Container>
+    <>
+      <div className="grid place-content-center bg-white self-center">
+        <video className="border-white border-2" width="1600" height="900" autoPlay muted>
+          <source src={CMS_URL + home?.video[0].url} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
       </div>
-      <div className="-mt-2">
-        <Container>
-          <div className="text-pmbrown-700 mt-24 text-2xl">最新消息</div>
-          <hr className="border-accent-2 mt-2 mb-4" />
-          <div className="flex flex-row flex-wrap -mx-2 my-4">
-            <CardNews />
-            <CardNews />
-            <CardNews />
-            <CardNews />
-          </div>
-        </Container>
-      </div>
-      <div className="-mt-2">
-        <Container>
-          <div className="text-pmbrown-700 mt-24 text-2xl">其他展品推薦</div>
-          <hr className="border-accent-2 mt-2 mb-4" />
-          <div className="flex overflow-x-scroll -mx-2 my-4">
-            {
-              product_suggestions.map((p, i) => (
-                <CardRelatedProduct product={p} key={i} />
-              ))
-            }
-          </div>
-        </Container>
-      </div>
-    </Layout>
+      <Layout appData={appData}>
+        <Image className="" src={imgUrl} alt={""} width={1920} height={550} />
+        <div className="-mt-2">
+          <Container>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+            <div>品牌介紹</div>
+          </Container>
+        </div>
+        <div className="-mt-2">
+          <Container>
+            <div className="text-pmbrown-700 mt-24 text-2xl">最新消息</div>
+            <hr className="border-accent-2 mt-2 mb-4" />
+            <div className="flex flex-row flex-wrap -mx-2 my-4">
+              <CardNews />
+              <CardNews />
+              <CardNews />
+              <CardNews />
+            </div>
+          </Container>
+        </div>
+        <div className="-mt-2">
+          <Container>
+            <div className="text-pmbrown-700 mt-24 text-2xl">其他展品推薦</div>
+            <hr className="border-accent-2 mt-2 mb-4" />
+            <div className="flex overflow-x-scroll -mx-2 my-4">
+              {
+                product_suggestions.map((p, i) => (
+                  <CardRelatedProduct product={p} key={i} />
+                ))
+              }
+            </div>
+          </Container>
+        </div>
+      </Layout>
+    </>
   )
 }
 
