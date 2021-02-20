@@ -7,6 +7,7 @@ import CardNews from '@/components/news/card-news'
 import Head from 'next/head'
 import Image from 'next/image'
 import React from "react";
+import { useEffect, useState } from 'react'
 import { CMS_URL } from '@/lib/constants'
 
 export default function Index({ home, appData }) {
@@ -14,16 +15,34 @@ export default function Index({ home, appData }) {
   let imgUrl = bannerImage ? CMS_URL + home.image[0].url : "https://via.placeholder.com/1920x550"
   let product_suggestions = home?.product_suggestions;
 
+  let [showLogo, setPageLogo] = useState("opacity-0");
+
+  useEffect(() => {
+    setTimeout(() => {
+      setPageLogo("opacity-50")
+    }, 5500);
+  }, [])
+
+  const pageLogoAction = () => {
+    document.getElementById("nav").scrollIntoView({ block: 'start', behavior: 'smooth' });
+    setTimeout(() => {
+      setPageLogo("hidden");
+      document.getElementById("nav").scrollIntoView({ block: 'start', behavior: 'instant' });
+    }, 1500);
+  }
+
   return (
     <>
-      <div className="grid place-content-center bg-red-400">
+      <div className="grid place-content-center bg-white">
         <div className="relative">
           <video className="absolute" width="1600" height="900" autoPlay muted>
             <source src={CMS_URL + home?.video[0].url} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className=" opacity-0">
-            <img className="" src={"/img/home-logo-1600X880.jpg"} width={1600} height={880} />
+          <div className={showLogo}>
+            <a onClick={pageLogoAction}>
+              <img className="" src={"/img/home-logo-1600X880.jpg"} width={1600} height={880} />
+            </a>
           </div>
         </div>
       </div>
@@ -46,6 +65,7 @@ export default function Index({ home, appData }) {
             <div>品牌介紹</div>
             <div>品牌介紹</div>
             <div>品牌介紹</div>
+
           </Container>
         </div>
         <div className="-mt-2">
