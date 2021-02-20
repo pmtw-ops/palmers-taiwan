@@ -8,7 +8,7 @@ export default function Layout({ children, appData }) {
   return (
     <>
       <Meta />
-      <div className="min-h-screen">
+      <div className="min-h-screen" id="nav">
         <Navbar appData={appData} />
         <main>{children}</main>
       </div>
