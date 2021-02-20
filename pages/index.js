@@ -18,12 +18,12 @@ export default function Index({ home, appData }) {
     <>
       <div className="grid place-content-center bg-white">
         <div className="relative">
-          <video className="absolute opacity-25" width="1600" height="900" autoPlay muted>
+          <video className="absolute opacity-40 border-red-500 border-2" width="1600" height="900" autoPlay muted>
             <source src={CMS_URL + home?.video[0].url} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="">
-            <img className="" src={"https://via.placeholder.com/1600x880"} width={1600} height={880} />
+          <div className=" opacity-0">
+            <img className="" src={"/img/home-logo-1600X880.jpg"} width={1600} height={880} />
           </div>
         </div>
       </div>
