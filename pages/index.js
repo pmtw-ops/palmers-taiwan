@@ -16,19 +16,24 @@ export default function Index({ home, appData }) {
   let product_suggestions = home?.product_suggestions;
 
   let [showLogo, setPageLogo] = useState("opacity-0");
+  let vidClosed = false;
 
   useEffect(() => {
     setTimeout(() => {
-      setPageLogo("opacity-50")
+      console.log(vidClosed)
+      if (!vidClosed) {
+        setPageLogo("opacity-50")
+      }
     }, 5500);
   }, [])
 
   const pageLogoAction = () => {
+    vidClosed = true;
     document.getElementById("nav").scrollIntoView({ block: 'start', behavior: 'smooth' });
     setTimeout(() => {
       setPageLogo("hidden");
       document.getElementById("nav").scrollIntoView({ block: 'start', behavior: 'instant' });
-    }, 1500);
+    }, 500);
   }
 
   return (
@@ -47,6 +52,7 @@ export default function Index({ home, appData }) {
         </div>
       </div>
       <Layout appData={appData}>
+        <div>{showLogo}</div>
         <Image className="" src={imgUrl} alt={""} width={1920} height={550} />
         <div className="-mt-2">
           <Container>
