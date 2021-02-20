@@ -20,7 +20,6 @@ export default function Index({ home, appData }) {
 
   useEffect(() => {
     setTimeout(() => {
-      console.log(vidClosed)
       if (!vidClosed) {
         setPageLogo("opacity-50")
       }
@@ -52,7 +51,6 @@ export default function Index({ home, appData }) {
         </div>
       </div>
       <Layout appData={appData}>
-        <div>{showLogo}</div>
         <Image className="" src={imgUrl} alt={""} width={1920} height={550} />
         <div className="-mt-2">
           <Container>
