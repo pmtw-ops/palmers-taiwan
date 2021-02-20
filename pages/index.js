@@ -16,9 +16,9 @@ export default function Index({ home, appData }) {
 
   return (
     <>
-      <div className="grid place-content-center bg-white">
+      <div className="grid place-content-center bg-red-400">
         <div className="relative">
-          <video className="absolute opacity-40 border-red-500 border-2" width="1600" height="900" autoPlay muted>
+          <video className="absolute" width="1600" height="900" autoPlay muted>
             <source src={CMS_URL + home?.video[0].url} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
