@@ -7,30 +7,30 @@ import CardNews from '@/components/news/card-news'
 import Head from 'next/head'
 import Image from 'next/image'
 import React from "react";
+import { useSelector, useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { CMS_URL } from '@/lib/constants'
+import { closeLogoVideo, selectVidClosed } from '@/redux/slices/home_logo_slice'
 
 export default function Index({ home, appData }) {
+  const dispatch = useDispatch();
+  
   let bannerImage = home?.image[0]
   let imgUrl = bannerImage ? CMS_URL + home.image[0].url : "https://via.placeholder.com/1920x550"
   let product_suggestions = home?.product_suggestions;
-
   let [showLogo, setPageLogo] = useState("opacity-0");
-  let vidClosed = false;
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (!vidClosed) {
-        setPageLogo("opacity-50")
-      }
-    }, 5500);
-  }, [])
+  let vidClosed = useSelector(selectVidClosed);
+  
+  setTimeout(() => {
+    if (!vidClosed) {
+      setPageLogo("opacity-50")
+    }
+  }, 5500);
 
   const pageLogoAction = () => {
-    vidClosed = true;
     document.getElementById("nav").scrollIntoView({ block: 'start', behavior: 'smooth' });
     setTimeout(() => {
-      setPageLogo("hidden");
+      dispatch(closeLogoVideo());
       document.getElementById("nav").scrollIntoView({ block: 'start', behavior: 'instant' });
     }, 500);
   }
@@ -43,7 +43,7 @@ export default function Index({ home, appData }) {
             <source src={CMS_URL + home?.video[0].url} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className={showLogo}>
+          <div className={showLogo + (!vidClosed ? "" : " hidden")}>
             <a onClick={pageLogoAction}>
               <img className="" src={"/img/home-logo-1600X880.jpg"} width={1600} height={880} />
             </a>
