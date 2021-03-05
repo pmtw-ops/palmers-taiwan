@@ -53,9 +53,7 @@ export default function Index({ home, appData }) {
       </div>
       <Layout appData={appData}>
         <Image className="" src={imgUrl} alt={""} width={1920} height={550} />
-
         <BrandStory />
-
         <Container>
           <div className="text-pmbrown-700 mt-24 text-2xl">最新消息</div>
           <hr className="border-accent-2 mt-2 mb-4" />

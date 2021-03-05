@@ -50,10 +50,11 @@ export default function NavMenuResponsive({ appData }) {
               </div>
               <div className="hidden md:block md:ml-6">
                 <div className="flex mt-4 space-x-4">
-                  <Link href="/" passHref><a href="" className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md font-medium">首頁</a></Link>
-                  <Link href="/about" passHref><a href="" className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md font-medium">關於我們</a></Link>
-                  <Link href="/collections" passHref><a href="" className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md font-medium">產品系列</a></Link>
-                  <Link href="/news" passHref><a href="" className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md font-medium">最新消息</a></Link>
+                  <Link href="/" passHref><a className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md font-medium">首頁</a></Link>
+                  <Link href="/about" passHref><a className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md font-medium">關於我們</a></Link>
+                  <Link href="#" passHref><a className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md font-medium">官網購買</a></Link>
+                  <Link href="/collections" passHref><a className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md font-medium">產品系列</a></Link>
+                  <Link href="/news" passHref><a className="text-pmbrown-700 text-lg hover:bg-gray-400 hover:text-pmbrown-100 px-3 py-2 rounded-md font-medium">最新消息</a></Link>
                 </div>
               </div>
             </div>
@@ -91,6 +92,7 @@ export default function NavMenuResponsive({ appData }) {
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link href="/"><a onClick={() => { toggleClose() }} className="text-pmbrown-200 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">首頁</a></Link>
             <Link href="/about"><a onClick={() => { toggleClose() }} className="text-pmbrown-200 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">關於我們</a></Link>
+            <Link href="#"><a onClick={() => { toggleClose() }} className="text-pmbrown-200 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">官網購買</a></Link>
             <Link href="/collections"><a onClick={() => { toggleClose() }} className="text-pmbrown-200 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">產品系列</a></Link>
             <Link href="/news"><a onClick={() => { toggleClose() }} className="text-pmbrown-200 hover:bg-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">最新消息</a></Link>
           </div>
