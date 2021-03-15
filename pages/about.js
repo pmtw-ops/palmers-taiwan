@@ -13,7 +13,6 @@ import { CMS_URL } from '@/lib/constants'
 export default function Index({ about, appData }) {
   let today = new Date();
   let years = today.getFullYear() - 1840;
-  
 
   let image = about?.image[0];
   let imgName = image?.name;
