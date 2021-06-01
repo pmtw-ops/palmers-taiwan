@@ -20,7 +20,7 @@ export default function Index({ home, appData }) {
   let imgUrl = bannerImage ? CMS_URL + home.image[0].url : "https://via.placeholder.com/1920x550"
   let product_suggestions = home?.product_suggestions;
   let [showLogo, setPageLogo] = useState("opacity-0");
-  let vidClosed = useSelector(selectVidClosed);
+  let vidClosed = useSelector(state => state.homeLogo.vidClosed);
 
   setTimeout(() => {
     if (!vidClosed) {
@@ -53,9 +53,7 @@ export default function Index({ home, appData }) {
       </div>
       <Layout appData={appData}>
         <Image className="" src={imgUrl} alt={""} width={1920} height={550} />
-
         <BrandStory />
-
         <Container>
           <div className="text-pmbrown-700 mt-24 text-2xl">最新消息</div>
           <hr className="border-accent-2 mt-2 mb-4" />
